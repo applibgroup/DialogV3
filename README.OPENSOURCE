@@ -1,0 +1,10 @@
+[
+    {
+        "Name": " DialogV3 ",
+        "License": " Apache License ",
+        "License File": " LICENSE ",
+        "Version Number": " ",
+        "Upstream URL": " https://github.com/kongzue/DialogV3 ",
+        "Description": "  This will provide different types of dialogs for iOS, MIUI, Material and Kongzue themes and for dark and light modes. "
+    }
+]

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<DirectionalLayout
+    xmlns:ohos="http://schemas.huawei.com/res/ohos"
+    ohos:height="match_content"
+    ohos:width="match_content"
+    ohos:alignment="center"
+    ohos:orientation="vertical"
+    ohos:padding="8vp">
+
+    <com.kongzue.dialog.util.view.IOSItemImageView
+        ohos:id="$+id:img_icon"
+        ohos:height="57vp"
+        ohos:width="57vp"
+        ohos:aiv_CornerRadius="13"/>
+
+    <Text
+        ohos:id="$+id:txt_label"
+        ohos:height="match_content"
+        ohos:width="match_parent"
+        ohos:text_alignment="center"
+        ohos:max_text_lines="2"
+        ohos:min_height="35vp"
+        ohos:text=""
+        ohos:text_color="$color:black"
+        ohos:text_size="10vp"/>
+
+</DirectionalLayout>

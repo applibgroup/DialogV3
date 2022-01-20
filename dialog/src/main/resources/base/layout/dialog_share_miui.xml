@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<DirectionalLayout
+    xmlns:ohos="http://schemas.huawei.com/res/ohos"
+    ohos:height="match_content"
+    ohos:width="match_parent"
+    ohos:orientation="vertical">
+
+    <DirectionalLayout
+        ohos:id="$+id:box_body"
+        ohos:height="match_content"
+        ohos:width="match_parent"
+        ohos:background_element="$graphic:rect_selectdialog_miui_bkg_light"
+        ohos:orientation="vertical">
+
+        <DirectionalLayout
+            ohos:height="match_content"
+            ohos:width="match_parent"
+            ohos:top_margin="20vp"
+            ohos:bottom_margin="20vp"
+            ohos:orientation="vertical">
+
+            <Text
+                ohos:id="$+id:txt_title"
+                ohos:height="match_content"
+                ohos:width="match_parent"
+                ohos:text_alignment="horizontal_center"
+                ohos:top_margin="10vp"
+                ohos:bottom_padding="10vp"
+                ohos:left_padding="15vp"
+                ohos:right_padding="15vp"
+                ohos:text="Share"
+                ohos:text_color="$color:black"
+                ohos:text_size="20vp"/>
+
+            <DependentLayout
+                ohos:id="$+id:box_custom"
+                ohos:height="match_content"
+                ohos:width="match_parent"
+                ohos:bottom_margin="10vp"
+                ohos:visibility="hide"/>
+
+            <ScrollView
+                ohos:id="$+id:box_scroller"
+                ohos:height="match_content"
+                ohos:width="match_parent"
+                ohos:weight="1">
+
+                <TableLayout
+                    ohos:id="$+id:box_item"
+                    ohos:height="match_parent"
+                    ohos:width="match_parent"
+                    ohos:layout_alignment="horizontal_center"
+                    ohos:alignment_type="align_contents"
+                    ohos:column_count="4"/>
+
+            </ScrollView>
+            <DirectionalLayout
+                ohos:id="$+id:box_cancel"
+                ohos:height="match_content"
+                ohos:width="match_parent"
+                ohos:orientation="vertical">
+
+                <Image
+                    ohos:id="$+id:img_split"
+                    ohos:height="15vp"
+                    ohos:width="match_parent"/>
+
+                <Text
+                    ohos:id="$+id:btn_cancel"
+                    ohos:height="50vp"
+                    ohos:width="match_parent"
+                    ohos:text_alignment="center"
+                    ohos:left_margin="20vp"
+                    ohos:right_margin="20vp"
+                    ohos:left_padding="15vp"
+                    ohos:right_padding="15vp"
+                    ohos:multiple_lines="false"
+                    ohos:text=""
+                    ohos:text_color="$color:dialogButtonMIUITextGray"
+                    ohos:text_size="16vp"/>
+
+            </DirectionalLayout>
+
+        </DirectionalLayout>
+
+    </DirectionalLayout>
+
+</DirectionalLayout>

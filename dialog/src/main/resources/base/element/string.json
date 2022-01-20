@@ -1,0 +1,866 @@
+{
+  "string": [
+    {
+      "name": "md_back_label",
+      "value": "Back"
+    },
+    {
+      "name": "md_done_label",
+      "value": "Done"
+    },
+    {
+      "name": "md_cancel_label",
+      "value": "Cancel"
+    },
+    {
+      "name": "md_choose_label",
+      "value": "Choose"
+    },
+    {
+      "name": "md_error_label",
+      "value": "Error"
+    },
+    {
+      "name": "md_storage_perm_error",
+      "value": "Your app has not been granted the READ_EXTERNAL_STORAGE permission."
+    },
+    {
+      "name": "md_custom_label",
+      "value": "Custom"
+    },
+    {
+      "name": "md_presets_label",
+      "value": "Presets"
+    },
+    {
+      "name": "color_palette",
+      "value": "Color Palette"
+    },
+
+    {
+      "name": "new_folder",
+      "value": "New Folder"
+    },
+    {
+      "name": "hello_world",
+      "value": "Hello, World!"
+    },
+    {
+      "name": "shareLocationPrompt",
+      "value": "This app wants to access your location."
+    },
+    {
+      "name": "agree",
+      "value": "Agree"
+    },
+    {
+      "name": "disagree",
+      "value": "Disagree"
+    },
+    {
+      "name": "useGoogleLocationServices",
+      "value": "Use Google's Location Services?"
+    },
+    {
+      "name": "useGoogleLocationServicesPrompt",
+      "value": "Let Google help apps determine location. This means sending anonymous location data to Google, even when no apps are running."
+    },
+    {
+      "name": "permissionSample",
+      "value": "Allow MaterialDialog to show you a sample of a checkbox prompt"
+    },
+    {
+      "name": "allow",
+      "value": "Allow"
+    },
+    {
+      "name": "deny",
+      "value": "Deny"
+    },
+    {
+      "name": "dont_ask_again",
+      "value": "Don't ask again"
+    },
+    {
+      "name": "noThanks",
+      "value": "No thanks"
+    },
+    {
+      "name": "more_info",
+      "value": "More Info"
+    },
+    {
+      "name": "socialNetworks",
+      "value": "Social Networks"
+    },
+    {
+      "name": "states",
+      "value": "States"
+    },
+    {
+      "name": "ok",
+      "value": "OK"
+    },
+    {
+      "name": "cancel",
+      "value": "Cancel"
+    },
+    {
+      "name": "add_item",
+      "value": "Add Item"
+    },
+    {
+      "name": "basic",
+      "value": "Basic"
+    },
+    {
+      "name": "stacked",
+      "value": "Stacked Buttons"
+    },
+    {
+      "name": "neutral",
+      "value": "Neutral Button"
+    },
+    {
+      "name": "callbacks",
+      "value": "Callbacks"
+    },
+    {
+      "name": "list",
+      "value": "Basic List"
+    },
+    {
+      "name": "singleChoice",
+      "value": "Single Choice"
+    },
+    {
+      "name": "multiChoice",
+      "value": "Multi Choice"
+    },
+    {
+      "name": "customView",
+      "value": "Custom View"
+    },
+    {
+      "name": "themed",
+      "value": "Themed"
+    },
+    {
+      "name": "signalStrength",
+      "value": "Signal strength"
+    },
+    {
+      "name": "excellent",
+      "value": "Excellent"
+    },
+    {
+      "name": "security",
+      "value": "Security"
+    },
+    {
+      "name": "securityType",
+      "value": "802.1x EAP"
+    },
+    {
+      "name": "password",
+      "value": "Password"
+    },
+    {
+      "name": "showPassword",
+      "value": "Show password"
+    },
+    {
+      "name": "choose",
+      "value": "Choose"
+    },
+    {
+      "name": "speedBoost",
+      "value": "Turn on speed boost now!"
+    },
+    {
+      "name": "googleWifi",
+      "value": "Google Wifi"
+    },
+    {
+      "name": "connect",
+      "value": "Connect"
+    },
+    {
+      "name": "about",
+      "value": "About"
+    },
+    {
+      "name": "about_body",
+      "value": "nmaterial-dialogs, a library  designed by <b>Aidan Follestad http://aidanfollestad.com Website https://twitter.com/afollestad Twitter https://google.com/+AidanFollestad Google+ https://github.com/afollestad GitHub https://www.linkedin.com/in/afollestad LinkedIn"
+    },
+    {
+      "name": "dismiss",
+      "value": "Dismiss"
+    },
+    {
+      "name": "basic_notitle",
+      "value": "Basic (No Title)"
+    },
+    {
+      "name": "basic_list_long",
+      "value": "Basic List (Long)"
+    },
+    {
+      "name": "custom_listitem_button",
+      "value": "A button!"
+    },
+    {
+      "name": "custom_adapter",
+      "value": "Custom Adapter"
+    },
+    {
+      "name": "loremIpsum",
+      "value": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vitae metus nec sapien elementum interdum ac mollis tortor. Nunc porttitor metus placerat orci auctor, sed dictum magna dapibus. Morbi a lacus ante. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Proin posuere nisl imperdiet lectus elementum accumsan. Etiam lacinia nisi ut nulla fermentum tempus. Integer ornare lacinia diam non maximus. Vestibulum iaculis urna eu elementum scelerisque. Etiam nisl erat, bibendum vitae magna nec, convallis malesuada erat. Cras non porttitor nibh. Pellentesque rhoncus sem luctus felis tincidunt bibendum. Pellentesque vulputate eros at nulla sollicitudin volutpat. Pellentesque laoreet est sit amet erat laoreet, id molestie nulla efficitur. Interdum et malesuada fames ac ante ipsum primis in faucibus. Sed varius nisl at imperdiet facilisis."
+    },
+    {
+      "name": "basic_longContent",
+      "value": "Basic (Long Content)"
+    },
+    {
+      "name": "basic_icon",
+      "value": "Basic (Icon)"
+    },
+    {
+      "name": "basic_list_notitle",
+      "value": "Basic List (No Title)"
+    },
+    {
+      "name": "folder_chooser",
+      "value": "Folder Chooser"
+    },
+    {
+      "name": "showCancelDismissCallbacks",
+      "value": "Show/Cancel/Dismiss Callbacks"
+    },
+    {
+      "name": "changelog",
+      "value": "Changelog"
+    },
+    {
+      "name": "customView_webView",
+      "value": "Custom View (No Scroll, WebView)"
+    },
+    {
+      "name": "customView_datePicker",
+      "value": "Custom View (No Scroll, DatePicker)"
+    },
+    {
+      "name": "color_chooser_primary",
+      "value": "Color Chooser (Primary)"
+    },
+    {
+      "name": "color_chooser_accent",
+      "value": "Color Chooser (Accent)"
+    },
+    {
+      "name": "ssid",
+      "value": "SSID"
+    },
+    {
+      "name": "ssidLit",
+      "value": "Material Dialogs"
+    },
+    {
+      "name": "preference_dialogs",
+      "value": "Preference Dialogs"
+    },
+    {
+      "name": "list_pref_title",
+      "value": "List Preference"
+    },
+    {
+      "name": "list_pref_desc",
+      "value": "This is an example of a list preference that automatically uses Material Dialogs to show the list dialog."
+    },
+    {
+      "name": "multilist_pref_title",
+      "value": "Multi Select List Preference"
+    },
+    {
+      "name": "multilist_pref_desc",
+      "value": "This is an example of a multi select list preference that automatically uses Material Dialogs to show the list dialog."
+    },
+    {
+      "name": "edittext_pref_title",
+      "value": "EditText Preference"
+    },
+    {
+      "name": "edittext_pref_desc",
+      "value": "This is an example of an EditText preference that automatically uses Material Dialogs to show the input dialog."
+    },
+    {
+      "name": "edittext_pref_dialogtitle",
+      "value": "Enter a Name"
+    },
+    {
+      "name": "edittext_pref_optionalvalue",
+      "value": "Default value"
+    },
+    {
+      "name": "progress_dialog_indeterminate",
+      "value": "Progress Dialog (Indeterminate)"
+    },
+    {
+      "name": "progress_dialog_indeterminate_horizontal",
+      "value": "Progress Dialog (Horizontal Indeterminate)"
+    },
+    {
+      "name": "progress_dialog",
+      "value": "Progress Dialog"
+    },
+    {
+      "name": "please_wait",
+      "value": "Please wait…"
+    },
+    {
+      "name": "optional_dialog_message",
+      "value": "This is an optional dialog message."
+    },
+    {
+      "name": "multiChoiceLimited",
+      "value": "Multi Choice (Limit Selections)"
+    },
+    {
+      "name": "selection_limit_reached",
+      "value": "You cannot select anymore items!"
+    },
+    {
+      "name": "selection_min_limit_reached",
+      "value": "You must select at least 1 item!"
+    },
+    {
+      "name": "back_button_label",
+      "value": "Back"
+    },
+    {
+      "name": "next_button_label",
+      "value": "Next"
+    },
+    {
+      "name": "skip_button_label",
+      "value": "Skip"
+    },
+    {
+      "name": "input",
+      "value": "Input"
+    },
+    {
+      "name": "input_custominvalidation",
+      "value": "Input (Custom Invalidation)"
+    },
+    {
+      "name": "input_hint",
+      "value": "John Appleseed"
+    },
+    {
+      "name": "input_content",
+      "value": "What's your name?"
+    },
+    {
+      "name": "simple_list",
+      "value": "Simple Dialog (Guidelines Spec)"
+    },
+    {
+      "name": "set_backup",
+      "value": "Set backup account"
+    },
+    {
+      "name": "add_account",
+      "value": "Add account"
+    },
+    {
+      "name": "submit",
+      "value": "Submit"
+    },
+    {
+      "name": "preference_dialog_message",
+      "value": "This is an example of a dialog message."
+    },
+    {
+      "name": "preference_dialog_title",
+      "value": "Dialog Title"
+    },
+    {
+      "name": "material_dialog_pref_title",
+      "value": "Dialog Preference"
+    },
+    {
+      "name": "material_dialog_pref_summary",
+      "value": "This is an example of a basic dialog preference that automatically uses Material Dialogs to show the dialog."
+    },
+    {
+      "name": "input_content_custominvalidation",
+      "value": "Do not type hello, or else!"
+    },
+    {
+      "name": "clear_selection",
+      "value": "Clear"
+    },
+    {
+      "name": "colors",
+      "value": "Colors"
+    },
+    {
+      "name": "color_chooser_customColors",
+      "value": "Color Chooser (Custom Palette)"
+    },
+    {
+      "name": "color_chooser_customColors_noSub",
+      "value": "Color Chooser (Custom Palette, No Sub)"
+    },
+    {
+      "name": "action_buttons",
+      "value": "Action Buttons"
+    },
+    {
+      "name": "custom_views",
+      "value": "Custom Views"
+    },
+    {
+      "name": "color_chooser",
+      "value": "Color Choosers"
+    },
+    {
+      "name": "progress",
+      "value": "Progress"
+    },
+    {
+      "name": "preferences",
+      "value": "Preferences"
+    },
+    {
+      "name": "misc",
+      "value": "Miscellaneous"
+    },
+    {
+      "name": "basic_lists",
+      "value": "Basic Lists"
+    },
+    {
+      "name": "choice_lists",
+      "value": "Choice Lists"
+    },
+    {
+      "name": "advanced_lists",
+      "value": "Advanced Lists"
+    },
+    {
+      "name": "list_longItems",
+      "value": "Basic List (Long Items)"
+    },
+    {
+      "name": "multiChoice_disabledItems",
+      "value": "Multi Choice (Disabled Items)"
+    },
+    {
+      "name": "singleChoice_longItems",
+      "value": "Single Choice (Long Items)"
+    },
+    {
+      "name": "multiChoice_longItems",
+      "value": "Multi Choice (Long Items)"
+    },
+    {
+      "name": "file_chooser",
+      "value": "File Chooser"
+    },
+    {
+      "name": "basic_checkbox_prompt",
+      "value": "Basic (CheckBox Prompt)"
+    },
+    {
+      "name": "date_picker",
+      "value": "Date Picker"
+    },
+    {
+      "name": "list_checkPrompt",
+      "value": "Basic List (CheckBox Prompt)"
+    },
+    {
+      "name": "input_checkPrompt",
+      "value": "Input (CheckBox Prompt)"
+    },
+    {
+      "name": "example_prompt",
+      "value": "Example check prompt"
+    },
+    {
+      "name": "list_longPress",
+      "value": "Basic List (Long Press)"
+    },
+    {
+      "name": "multiChoiceLimitedMin",
+      "value": "Multi Choice (Min Selections)"
+    },
+    {
+      "name": "mainability_description",
+      "value": "hap sample empty page"
+    },
+    {
+      "name": "input_checkboxprompt",
+      "value": "input checkbox prompt"
+    },
+    {
+      "name": "Handlers",
+      "value": "1. Handlers and TaskDispatchers"
+    },
+    {
+      "name": "Ability",
+      "value": "2. Ability,  Containers and Listeners"
+    },
+    {
+      "name": "Drawables",
+      "value": "3. Drawables"
+    },
+    {
+      "name": "Resource_Decoding",
+      "value": "4. Resource Decoding"
+    },
+    {
+      "name": "Animation_Interpolators",
+      "value": "5. Animation and Interpolators"
+    },
+    {
+      "name": "Path_ObjectAnimation",
+      "value": "6. Path and Object Animation"
+    },
+    {
+      "name": "Layouts",
+      "value": "13. Layouts and EventListeners"
+    },
+    {
+      "name": "Transitions",
+      "value": "8. Transitions"
+    },
+    {
+      "name": "Permissions",
+      "value": "9. Permissions"
+    },
+    {
+      "name": "Database",
+      "value": "Database operations"
+    },
+    {
+      "name": "BlueTooth",
+      "value": "11. BlueTooth"
+    },
+    {
+      "name": "Graphics",
+      "value": "12. Graphics"
+    },
+    {
+      "name": "t_useGoogleLocationServices",
+      "value": "Use Google's Location Services?"
+    },
+    {
+      "name": "t_useGoogleLocationServicesPrompt",
+      "value": "Let Google help apps determine location. This means sending anonymous location data to Google, even when no apps are running."
+    },
+    {
+      "name": "t_agree",
+      "value": "Agree"
+    },
+    {
+      "name": "t_disagree",
+      "value": "Disagree"
+    },
+    {
+      "name": "t_socialNetworks",
+      "value": "Social Networks"
+    },
+    {
+      "name": "t_states",
+      "value": "States"
+    },
+    {
+      "name": "t_ok",
+      "value": "OK"
+    },
+    {
+      "name": "t_cancel",
+      "value": "Cancel"
+    },
+    {
+      "name": "t_input",
+      "value": "Input"
+    },
+    {
+      "name": "t_input_content",
+      "value": "What's your name?"
+    },
+    {
+      "name": "t_submit",
+      "value": "Submit"
+    },
+    {
+      "name": "t_input_hint",
+      "value": "John Appleseed"
+    },
+    {
+      "name": "WifiP2P",
+      "value": "14. WifiP2P"
+    },
+    {
+      "name": "btn_start_discovery",
+      "value": "Start Discovery"
+    },
+    {
+      "name": "title_paired_devices",
+      "value": "Paired Devices"
+    },
+    {
+      "name": "title_available_devices",
+      "value": "Available Devices"
+    },
+    {
+      "name": "bluetooth",
+      "value": "Bluetooth"
+    },
+    {
+      "name": "bluetooth_status",
+      "value": "Bluetooth Status"
+    },
+    {
+      "name": "start_discovery",
+      "value": "Start Discovery"
+    },
+    {
+      "name": "peer_devices",
+      "value": "PEER DEVICES"
+    },
+    {
+      "name": "wifi_status_text",
+      "value": "Wi-Fi Status"
+    },
+    {
+      "name": "directional_layout",
+      "value": "Directional Layout"
+    },
+    {
+      "name": "directional_layout1",
+      "value": "Directional Layout1"
+    },
+    {
+      "name": "directional_layout2",
+      "value": "Directional Layout2"
+    },
+    {
+      "name": "stack_layout1",
+      "value": "Stack Layout1"
+    },
+    {
+      "name": "stack_layout2",
+      "value": "Stack Layout2"
+    },
+    {
+      "name": "table_layout",
+      "value": "Table Layout"
+    },
+    {
+      "name": "dependent_layout",
+      "value": "Dependent Layout"
+    },
+    {
+      "name": "abilityslice",
+      "value": "Ability"
+    },
+    {
+      "name": "listcontainer",
+      "value": "List Container"
+    },
+    {
+      "name": "animation1",
+      "value": "Animation Fading"
+    },
+    {
+      "name": "animation2",
+      "value": "Animation Frame"
+    },
+    {
+      "name": "animation3",
+      "value": "Animation Scale Curve"
+    },
+    {
+      "name": "animation4",
+      "value": "Simple Custom Animation"
+    },
+    {
+      "name": "transition_name",
+      "value": "Transition Names"
+    },
+    {
+      "name": "transition_rotation",
+      "value": "Transition Rotation"
+    },
+    {
+      "name": "transition_changetext",
+      "value": "Transition ChangeText"
+    },
+    {
+      "name": "transition_autotransition",
+      "value": "Transition Autotransition"
+    },
+    {
+      "name": "wifi",
+      "value": "WIFI"
+    },
+        {
+      "name": "One_1",
+      "value": "1. Run ToastMsg"
+    },
+    {
+      "name": "One_2",
+      "value": "2. EventHandler with background Thread (Crashes)"
+    },
+    {
+      "name": "One_3",
+      "value": "3. EventHandler with UI Thread"
+    },
+    {
+      "name": "One_4",
+      "value": "4. EventHandler with Post Runnable"
+    },
+    {
+      "name": "One_5",
+      "value": "5. Task Dispatcher"
+    },
+    {
+      "name": "Two_1",
+      "value": "1. Testcase1"
+    },
+    {
+      "name": "Three_1",
+      "value": "1. Testcase1"
+    },
+    {
+      "name": "Three_2",
+      "value": "2. Three_2"
+    },
+    {
+      "name": "Three_3",
+      "value": "3. Testcase3"
+    },
+    {
+      "name": "Three_4",
+      "value": "4. Testcase4"
+    },
+    {
+      "name": "Three_5",
+      "value": "5. Testcase5"
+    },
+    {
+      "name": "Three_6",
+      "value": "6. Testcase6"
+    },
+    {
+      "name": "Four_1",
+      "value": "1. Get String"
+    },
+    {
+      "name": "Four_2",
+      "value": "2. Get Color"
+    },
+    {
+      "name": "Four_3",
+      "value": "3. Get Dimen"
+    },
+    {
+      "name": "Four_4",
+      "value": "4. Get String Array"
+    },
+    {
+      "name": "Four_5",
+      "value": "5. Get Int Array"
+    },
+    {
+      "name": "Four_6",
+      "value": "6. Get PixelMap"
+    },
+    {
+      "name": "Four_7",
+      "value": "7. Get PixelMap Element"
+    },
+    {
+      "name": "Four_8",
+      "value": "8. Get ShapeElement"
+    },
+    {
+      "name": "Five_1",
+      "value": "1. Testcase1"
+    },
+    {
+      "name": "Six_1",
+      "value": "1. Testcase1"
+    },
+    {
+      "name": "Seven_1",
+      "value": "1. Testcase1"
+    },
+    {
+      "name": "Eight_1",
+      "value": "1. Testcase1"
+    },
+    {
+      "name": "Nine_1",
+      "value": "1. Testcase1"
+    },
+    {
+      "name": "Ten_1",
+      "value": "1. Testcase1"
+    },
+    {
+      "name": "Eleven_1",
+      "value": "1. Empty Canvas"
+    },
+    {
+      "name": "Eleven_2",
+      "value": "2. Fill Style Paint"
+    },
+    {
+      "name": "Eleven_3",
+      "value": "3. Stroke Style Paint"
+    },
+    {
+      "name": "Eleven_4",
+      "value": "4. Fill&Stroke Style Paint"
+    },
+    {
+      "name": "Eleven_5",
+      "value": "5. Rounded Rectangle Transformation"
+    },
+    {
+      "name": "Eleven_6",
+      "value": "6. Rectangle Transformation"
+    },
+    {
+      "name": "Eleven_7",
+      "value": "7. Oval Shape Transformation"
+    },
+    {
+      "name": "Eleven_8",
+      "value": "8. Mirror Mode"
+    },
+    {
+      "name": "Eleven_9",
+      "value": "9. Repeat Mode"
+    },
+    {
+      "name": "Eleven_10",
+      "value": "10. Clamp Mode"
+    },
+    {
+      "name": "Twelve_1",
+      "value": "1. Testcase1"
+    },
+    {
+      "name": "database",
+      "value": "Database Operations"
+    }
+
+  ]
+}

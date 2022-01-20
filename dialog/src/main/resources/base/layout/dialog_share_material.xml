@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<DirectionalLayout
+    xmlns:ohos="http://schemas.huawei.com/res/ohos"
+    ohos:height="match_content"
+    ohos:width="match_parent"
+    ohos:orientation="vertical">
+
+    <DirectionalLayout
+        ohos:id="$+id:box_body"
+        ohos:height="match_content"
+        ohos:width="match_parent"
+        ohos:background_element="$graphic:rect_bottom_dialog"
+        ohos:orientation="vertical">
+
+        <Image
+            ohos:id="$+id:img_tab"
+            ohos:height="4vp"
+            ohos:width="30vp"
+            ohos:image_src="$graphic:rect_share_material_tab"
+            ohos:layout_alignment="horizontal_center"
+            ohos:top_margin="15vp"/>
+
+        <Text
+            ohos:id="$+id:txt_title"
+            ohos:height="match_content"
+            ohos:width="match_parent"
+            ohos:bottom_margin="15vp"
+            ohos:text_alignment="horizontal_center"
+            ohos:left_margin="25vp"
+            ohos:right_margin="25vp"
+            ohos:text="Share"
+            ohos:text_color="$color:tipTextColor"
+            ohos:text_size="18vp"
+            ohos:top_margin="15vp"/>
+
+        <DependentLayout
+            ohos:id="$+id:box_custom"
+            ohos:height="match_content"
+            ohos:width="match_parent"
+            ohos:visibility="hide"/>
+
+        <Image
+            ohos:id="$+id:title_split_line"
+            ohos:height="1px"
+            ohos:width="match_parent"
+            ohos:background_element="$color:dialogSplitIOSLight"
+            ohos:visibility="hide"/>
+
+        <TableLayout
+            ohos:id="$+id:box_item"
+            ohos:height="match_parent"
+            ohos:width="match_parent"
+            ohos:column_count="4"
+            ohos:alignment_type="align_contents"
+            ohos:layout_alignment="center"/>
+
+    </DirectionalLayout>
+</DirectionalLayout>

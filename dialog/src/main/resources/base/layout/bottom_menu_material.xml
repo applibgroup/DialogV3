@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<DirectionalLayout
+    xmlns:ohos="http://schemas.huawei.com/res/ohos"
+    ohos:height="match_parent"
+    ohos:width="match_parent"
+    ohos:orientation="vertical"
+    ohos:id="$+id:box_root">
+
+    <DirectionalLayout
+        ohos:id="$+id:box_body"
+        ohos:height="match_content"
+        ohos:width="match_parent"
+        ohos:background_element="$graphic:rect_bottom_dialog"
+        ohos:orientation="vertical"
+        ohos:visibility="hide">
+
+        <Image
+            ohos:id="$+id:img_tab"
+            ohos:height="4vp"
+            ohos:width="30vp"
+            ohos:image_src="$graphic:rect_share_material_tab"
+            ohos:layout_alignment="horizontal_center"
+            ohos:top_margin="15vp"
+            ohos:bottom_margin="15vp"/>
+
+        <Text
+            ohos:id="$+id:txt_title"
+            ohos:height="match_content"
+            ohos:width="match_parent"
+            ohos:left_margin="20vp"
+            ohos:right_margin="20vp"
+            ohos:text=""
+            ohos:text_color="#8f8f8f"
+            ohos:text_size="12vp"
+            ohos:top_margin="10vp"
+            ohos:visibility="hide"/>
+
+        <DependentLayout
+            ohos:id="$+id:box_custom"
+            ohos:height="match_content"
+            ohos:width="match_parent"
+            ohos:bottom_margin="10vp"
+            ohos:visibility="hide"></DependentLayout>
+
+        <ListContainer
+            ohos:id="$+id:list_menu"
+            ohos:height="150vp"
+            ohos:width="match_parent"
+            />
+
+        <DirectionalLayout
+            ohos:id="$+id:box_cancel"
+            ohos:height="match_content"
+            ohos:width="match_parent"
+            ohos:orientation="vertical"
+            ohos:visibility="hide">
+
+        <Image
+            ohos:height="1vp"
+            ohos:width="match_parent"
+            ohos:background_element="#2c000000"/>
+
+        <Image
+            ohos:height="15vp"
+            ohos:width="match_parent"
+            ohos:background_element="#2c000000"/>
+
+        <Image
+            ohos:height="1vp"
+            ohos:width="match_parent"
+            ohos:background_element="#2c000000"/>
+
+        <Text
+            ohos:id="$+id:btn_cancel"
+            ohos:height="50vp"
+            ohos:background_element="$graphic:button_menu_kongzue"
+            ohos:text_alignment="center"
+            ohos:width="match_parent"
+            ohos:left_padding="15vp"
+            ohos:right_padding="15vp"
+            ohos:text=""
+            ohos:text_color="#353535"
+            ohos:text_size="16vp"/>
+
+    </DirectionalLayout>
+
+</DirectionalLayout>
+
+    </DirectionalLayout>

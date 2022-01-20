@@ -1,0 +1,120 @@
+{
+  "color": [
+    {
+      "name": "notificationNormal",
+      "value": "#353535"
+    },
+    {
+      "name": "white",
+      "value": "#ffffff"
+    },
+    {
+      "name": "black",
+      "value": "#282828"
+    },
+    {
+      "name": "light_white",
+      "value": "#FFFCF9F9"
+    },
+    {
+      "name": "dark_blue",
+      "value": "#096CD1"
+    },
+    {
+      "name": "light_black",
+      "value": "#383838"
+    },
+    {
+      "name": "light_blue",
+      "value": "#0C84FF"
+    },
+    {
+      "name": "dark_gray",
+      "value": "#DCDCDC"
+    },
+    {
+      "name": "light_gray",
+      "value": "#F0F0F0"
+    },
+    {
+      "name": "dark",
+      "value": "#353535"
+    },
+    {
+      "name": "notificationTipTextColorMaterial",
+      "value": "#757575"
+    },
+    {
+      "name": "dialogButtonMIUITextGray",
+      "value": "#606060"
+    },
+    {
+      "name": "dialogSplitIOSLight",
+      "value": "#2c000000"
+    },
+    {
+      "name": "dialogSplitIOSDark",
+      "value": "#4e4e50"
+    },
+    {
+      "name": "dialogButtonIOSNormal",
+      "value": "#007aff"
+    },
+    {
+      "name": "menuSplitSpaceKongzue",
+      "value": "#f1f2f4"
+    },
+    {
+      "name": "blackAlpha10",
+      "value": "#1A000000"
+    },
+    {
+      "name": "tipTextColor",
+      "value": "#8f8f8f"
+    },
+    {
+      "name": "whiteAlpha30",
+      "value": "#4DFFFFFF"
+    },
+    {
+      "name": "dialogBkgIOSLight",
+      "value": "#F4F5F6"
+    },
+    {
+      "name": "materialDarkTitleColor",
+      "value": "#9BA0A6"
+    },
+    {
+      "name": "materialDarkBackgroundColor",
+      "value": "#2D2E30"
+    },
+    {
+      "name": "whiteAlpha10",
+      "value": "#1AFFFFFF"
+    },
+    {
+      "name": "kongzueDarkBkgColor",
+      "value": "#202125"
+    },
+    {
+      "name": "materialDarkTextColor",
+      "value": "#E9EAEE"
+    },
+    {
+      "name": "lightgrey",
+      "value": "#D3D3D3"
+    },
+    {
+      "name": "dialogButtonIOSLightPress",
+      "value": "#0f000000"
+    },
+    {
+      "name": "empty",
+      "value": "#00000000"
+    },
+    {
+      "name": "transparent",
+      "value": "#80000000"
+    }
+  ]
+}

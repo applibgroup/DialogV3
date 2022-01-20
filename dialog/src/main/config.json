@@ -1,0 +1,22 @@
+{
+  "app": {
+    "bundleName": "com.kongzue.dialogdemo",
+    "vendor": "kongzue",
+    "version": {
+      "code": 1000000,
+      "name": "1.0.0"
+    }
+  },
+  "deviceConfig": {},
+  "module": {
+    "package": "com.kongzue.dialog",
+    "deviceType": [
+      "phone"
+    ],
+    "distro": {
+      "deliveryWithInstall": true,
+      "moduleName": "dialog",
+      "moduleType": "har"
+    }
+  }
+}

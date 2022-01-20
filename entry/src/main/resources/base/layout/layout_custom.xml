@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<DirectionalLayout xmlns:ohos="http://schemas.huawei.com/res/ohos"
+    ohos:width="match_parent"
+    ohos:height="match_parent">
+
+    <DependentLayout
+        ohos:id="$+id:box_layout"
+        ohos:width="match_parent"
+        ohos:height="match_content"
+        ohos:alignment="horizontal_center"
+        ohos:orientation="vertical"
+        ohos:bottom_padding="15vp"
+        ohos:top_padding="15vp">
+
+        <Image
+            ohos:id="$+id:img_ico"
+            ohos:width="150"
+            ohos:height="150"
+            ohos:left_margin="50vp"
+            ohos:bottom_margin="10vp"
+            ohos:background_element="$media:ico_wechat"/>
+
+        <Text
+            ohos:width="match_content"
+            ohos:height="match_content"
+            ohos:top_margin="60vp"
+            ohos:text="This is a custom layout test."
+            ohos:text_size="12vp" />
+
+    </DependentLayout>
+
+</DirectionalLayout>

@@ -1,0 +1,28 @@
+{
+  "float": [
+    {
+      "name": "radius_25vp",
+      "value": "25vp"
+    },
+    {
+      "name": "radius_15vp",
+      "value": "15vp"
+    },
+    {
+      "name": "radius_5vp",
+      "value": "5vp"
+    },
+    {
+      "name": "radius_99vp",
+      "value": "99vp"
+    },
+    {
+      "name": "radius_2vp",
+      "value": "2vp"
+    },
+    {
+      "name": "radius_10vp",
+      "value": "10vp"
+    },
+  ]
+}

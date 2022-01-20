@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<DirectionalLayout
+    xmlns:ohos="http://schemas.huawei.com/res/ohos"
+    ohos:height="match_parent"
+    ohos:width="match_parent"
+    ohos:orientation="vertical"
+    ohos:background_element="$graphic:rect_selectdialog_miui_bkg_dark"
+    ohos:id="$+id:box_root">
+
+    <com.kongzue.dialog.util.view.MaxHeightLayout
+        ohos:height="match_content"
+        ohos:width="match_parent">
+
+        <DirectionalLayout
+            ohos:id="$+id:box_body"
+            ohos:height="match_content"
+            ohos:width="match_parent"
+            ohos:top_margin="20vp"
+            ohos:bottom_margin="20vp"
+            ohos:clickable="true"
+            ohos:focusable="focus_enable"
+            ohos:focusable_in_touch="true"
+            ohos:orientation="vertical"
+            ohos:background_element="#222224">
+
+            <Text
+                ohos:id="$+id:txt_title"
+                ohos:height="match_content"
+                ohos:width="match_parent"
+                ohos:left_padding="15vp"
+                ohos:right_padding="15vp"
+                ohos:top_padding="5vp"
+                ohos:bottom_padding="10vp"
+                ohos:background_element="#222224"
+                ohos:text_alignment="horizontal_center"
+                ohos:text_color="#000"
+                ohos:text_size="20vp"
+                ohos:visibility="hide"
+                />
+
+            <DependentLayout
+                ohos:id="$+id:box_custom"
+                ohos:height="match_content"
+                ohos:width="match_parent"
+                ohos:background_element="#222224"
+                ohos:bottom_margin="10vp"
+                ohos:visibility="hide"></DependentLayout>
+
+            <ListContainer
+                ohos:id="$+id:list_menu"
+                ohos:height="150vp"
+                ohos:background_element="#222224"
+                ohos:width="match_parent"
+                />
+
+            <DirectionalLayout
+                ohos:id="$+id:box_cancel"
+                ohos:height="match_content"
+                ohos:width="match_parent"
+                ohos:background_element="#222224"
+                ohos:orientation="vertical">
+
+                <Image
+                    ohos:id="$+id:img_split"
+                    ohos:height="15vp"
+                    ohos:width="match_parent"/>
+
+                <Text
+                    ohos:id="$+id:btn_cancel"
+                    ohos:height="50vp"
+                    ohos:width="match_parent"
+                    ohos:left_padding="15vp"
+                    ohos:background_element="$graphic:button_selectdialog_miui_dark"
+                    ohos:clickable="true"
+                    ohos:right_padding="15vp"
+                    ohos:text=""
+                    ohos:text_alignment="center"
+                    ohos:text_color="#606060"
+                    ohos:text_font="Bold"
+                    ohos:text_size="16vp"/>
+
+            </DirectionalLayout>
+
+        </DirectionalLayout>
+    </com.kongzue.dialog.util.view.MaxHeightLayout>
+</DirectionalLayout>

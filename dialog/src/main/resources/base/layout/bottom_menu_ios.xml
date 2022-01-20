@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<DirectionalLayout
+    xmlns:ohos="http://schemas.huawei.com/res/ohos"
+    ohos:id="$+id:box_root"
+    ohos:height="match_parent"
+    ohos:width="match_parent"
+    ohos:background_element="#00000000"
+    ohos:orientation="vertical">
+
+    <com.kongzue.dialog.util.view.MaxHeightLayout
+        ohos:height="match_content"
+        ohos:width="match_parent">
+
+        <DirectionalLayout
+            ohos:id="$+id:box_body"
+            ohos:height="match_content"
+            ohos:width="match_parent"
+            ohos:orientation="vertical">
+
+            <DependentLayout
+                ohos:id="$+id:box_list"
+                ohos:height="match_content"
+                ohos:width="match_parent"
+                ohos:bottom_margin="10vp"
+                ohos:left_margin="10vp"
+                ohos:orientation="vertical"
+                ohos:right_margin="10vp"
+                ohos:total_weight="1">
+
+                <DirectionalLayout
+                    ohos:height="match_content"
+                    ohos:width="match_parent"
+                    ohos:orientation="vertical">
+
+                    <Text
+                        ohos:id="$+id:txt_title"
+                        ohos:height="40vp"
+                        ohos:width="match_parent"
+                        ohos:background_element="$graphic:button_selectdialog_kongzhue_white"
+                        ohos:text=""
+                        ohos:text_alignment="horizontal_center"
+                        ohos:text_color="#8f8f8f"
+                        ohos:text_font="BOLD"
+                        ohos:text_size="16vp"
+                        ohos:top_padding="10vp"
+                        ohos:visibility="hide"/>
+
+                    <DependentLayout
+                        ohos:id="$+id:box_custom"
+                        ohos:height="match_content"
+                        ohos:width="match_parent"
+                        ohos:visibility="hide"></DependentLayout>
+
+                    <Image
+                        ohos:id="$+id:title_split_line"
+                        ohos:height="1px"
+                        ohos:width="match_parent"
+                        ohos:background_element="#2c000000"
+                        ohos:visibility="hide"/>
+
+                    <ListContainer
+                        ohos:id="$+id:list_menu"
+                        ohos:height="150vp"
+                        ohos:width="match_parent"
+                        />
+
+                </DirectionalLayout>
+
+            </DependentLayout>
+
+            <DependentLayout
+                ohos:id="$+id:box_cancel"
+                ohos:height="match_content"
+                ohos:width="match_parent"
+                ohos:bottom_margin="10vp"
+                ohos:left_margin="10vp"
+                ohos:right_margin="10vp"
+                ohos:top_margin="-2vp">
+
+                <Text
+                    ohos:id="$+id:btn_cancel"
+                    ohos:height="53vp"
+                    ohos:width="match_parent"
+                    ohos:background_element="$graphic:button_selectdialog_kongzhue_white"
+                    ohos:clickable="true"
+                    ohos:right_padding="15vp"
+                    ohos:text="CANCEL"
+                    ohos:text_alignment="center"
+                    ohos:text_color="#007aff"
+                    ohos:text_font="Bold"
+                    ohos:text_size="19vp"/>
+
+            </DependentLayout>
+
+
+        </DirectionalLayout>
+
+
+    </com.kongzue.dialog.util.view.MaxHeightLayout>
+
+
+</DirectionalLayout>

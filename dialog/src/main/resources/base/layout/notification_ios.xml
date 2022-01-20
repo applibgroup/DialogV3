@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.kongzue.dialog.util.view.NotifyToastShadowView
+    xmlns:ohos="http://schemas.huawei.com/res/ohos"
+    ohos:height="match_parent"
+    ohos:width="match_parent"
+    ohos:orientation="vertical">
+
+    <DependentLayout
+        ohos:id="$+id:box_body"
+        ohos:height="match_content"
+        ohos:width="match_parent"
+        ohos:clickable="false"
+        ohos:focusable="focus_disable"
+        ohos:focusable_in_touch="false">
+
+        <DirectionalLayout
+            ohos:id="$+id:btn_notic"
+            ohos:height="match_content"
+            ohos:width="match_parent"
+            ohos:background_element="$graphic:background_ios"
+            ohos:left_margin="10vp"
+            ohos:right_margin="10vp"
+            ohos:top_margin="10vp"
+            ohos:bottom_margin="10vp"
+            ohos:bottom_padding="22vp"
+            ohos:layout_alignment="vertical_center"
+            ohos:left_padding="12vp"
+            ohos:orientation="vertical"
+            ohos:right_padding="12vp"
+            ohos:top_padding="16vp">
+
+            <DirectionalLayout
+                ohos:id="$+id:box_title"
+                ohos:height="match_content"
+                ohos:width="match_parent"
+                ohos:bottom_margin="3vp"
+                ohos:layout_alignment="vertical_center"
+                ohos:orientation="horizontal">
+
+                <Image
+                    ohos:id="$+id:img_icon"
+                    ohos:height="20vp"
+                    ohos:width="20vp"
+                    ohos:right_margin="5vp"/>
+
+                <Text
+                    ohos:id="$+id:txt_title"
+                    ohos:height="match_content"
+                    ohos:width="match_content"
+                    ohos:layout_alignment="vertical_center"
+                    ohos:multiple_lines="false"
+                    ohos:right_margin="10vp"
+                    ohos:text="Title"
+                    ohos:text_color="$color:dark"
+                    ohos:text_size="15vp"
+                    ohos:text_weight="700"/>
+
+            </DirectionalLayout>
+
+            <Text
+                ohos:id="$+id:txt_message"
+                ohos:height="match_content"
+                ohos:width="match_parent"
+                ohos:layout_alignment="vertical_center"
+                ohos:weight="1"
+                ohos:multiple_lines="false"
+                ohos:text="Content"
+                ohos:text_color="$color:dark"
+                ohos:text_size="15vp"/>
+
+            <DependentLayout
+                ohos:id="$+id:box_custom"
+                ohos:height="match_content"
+                ohos:width="match_parent"
+                ohos:bottom_margin="5vp"
+                ohos:top_margin="5vp"
+                ohos:visibility="hide"/>
+        </DirectionalLayout>
+    </DependentLayout>
+</com.kongzue.dialog.util.view.NotifyToastShadowView>
