@@ -249,16 +249,7 @@ public class MessageDialog extends DialogBase {
                                 boxRoot.setLayoutConfig(new ComponentContainer.LayoutConfig(850, 400));
                             }
                         } else {
-                            if (btnSelectPositive != null && !isNull(cancelButton) && !isNull(otherButton)) {
-                                boxRoot.setLayoutConfig(new ComponentContainer.LayoutConfig(850, ComponentContainer.LayoutConfig.MATCH_CONTENT));
-                            } else if ((btnSelectPositive != null && !isNull(cancelButton) && isNull(otherButton))
-                                    || (btnSelectPositive != null && isNull(cancelButton) && !isNull(otherButton))) {
-                                boxRoot.setLayoutConfig(new ComponentContainer.LayoutConfig(850, ComponentContainer.LayoutConfig.MATCH_CONTENT));
-                            } else if (btnSelectPositive != null && isNull(cancelButton) && isNull(otherButton)) {
-                                boxRoot.setLayoutConfig(new ComponentContainer.LayoutConfig(850, ComponentContainer.LayoutConfig.MATCH_CONTENT));
-                            } else {
-                                boxRoot.setLayoutConfig(new ComponentContainer.LayoutConfig(850, ComponentContainer.LayoutConfig.MATCH_CONTENT));
-                            }
+                            boxRoot.setLayoutConfig(new ComponentContainer.LayoutConfig(850, ComponentContainer.LayoutConfig.MATCH_CONTENT));
                         }
                     } else {
                         boxRoot.setLayoutConfig(new ComponentContainer.LayoutConfig(850, 700));
@@ -566,11 +557,7 @@ public class MessageDialog extends DialogBase {
                 }
 
                 btnSelectNegative.setClickedListener(component -> {
-                    if (onCancelButtonClickListener != null) {
-                        doDismiss();
-                    } else {
-                        doDismiss();
-                    }
+                    doDismiss();
                 });
             }
         }
@@ -598,11 +585,7 @@ public class MessageDialog extends DialogBase {
             btnSelectOther.setClickedListener(new Component.ClickedListener() {
                 @Override
                 public void onClick(Component component) {
-                    if (onOtherButtonClickListener != null) {
-                        doDismiss();
-                    } else {
-                        doDismiss();
-                    }
+                    doDismiss();
                 }
             });
         }

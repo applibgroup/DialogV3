@@ -116,19 +116,19 @@ public class TipDialog extends DialogBase {
                 waitDialogTemp = null;
             };
 
-            if (waitDialog == null) {
-                waitDialogTemp.setTip(null);
-                waitDialogTemp.setMessage(message);
-                if (waitDialogTemp.cancelTimer != null) waitDialogTemp.cancelTimer.cancel();
-                return waitDialogTemp;
-            } else {
+//            if (waitDialog == null) {
+//                waitDialogTemp.setTip(null);
+//                waitDialogTemp.setMessage(message);
+//                if (waitDialogTemp.cancelTimer != null) waitDialogTemp.cancelTimer.cancel();
+//                return waitDialogTemp;
+//            } else {
                 waitDialog.message = message;
                 waitDialog.type = null;
                 waitDialog.tipImage = null;
                 if (waitDialog.cancelTimer != null) waitDialog.cancelTimer.cancel();
                 waitDialog.showDialog(context);
                 return waitDialog;
-            }
+//            }
         }
     }
 
@@ -142,12 +142,12 @@ public class TipDialog extends DialogBase {
                 waitDialogTemp = null;
             };
 
-            if (waitDialog == null) {
-                waitDialogTemp.setTip(null);
-                waitDialogTemp.setMessage(context.getString(messageResId));
-                if (waitDialogTemp.cancelTimer != null) waitDialogTemp.cancelTimer.cancel();
-                return waitDialogTemp;
-            } else {
+//            if (waitDialog == null) {
+//                waitDialogTemp.setTip(null);
+//                waitDialogTemp.setMessage(context.getString(messageResId));
+//                if (waitDialogTemp.cancelTimer != null) waitDialogTemp.cancelTimer.cancel();
+//                return waitDialogTemp;
+//            } else {
                 waitDialog.message = context.getString(messageResId);
                 waitDialog.type = null;
                 waitDialog.tipImage = null;
@@ -155,7 +155,7 @@ public class TipDialog extends DialogBase {
                 waitDialog.showDialog(context);
                 return waitDialog;
             }
-        }
+//        }
     }
 
     public static TipDialog show(Context context, CharSequence message, TYPE type) {
@@ -168,19 +168,19 @@ public class TipDialog extends DialogBase {
                 waitDialogTemp = null;
             };
 
-            if (waitDialog == null) {
-                waitDialogTemp.setTip(type);
-                waitDialogTemp.setMessage(message);
-                waitDialogTemp.autoDismiss();
-                return waitDialogTemp;
-            } else {
+//            if (waitDialog == null) {
+//                waitDialogTemp.setTip(type);
+//                waitDialogTemp.setMessage(message);
+//                waitDialogTemp.autoDismiss();
+//                return waitDialogTemp;
+//            } else {
                 waitDialog.message = message;
                 waitDialog.setTip(type);
                 waitDialog.showDialog(context);
                 waitDialog.autoDismiss();
                 return waitDialog;
             }
-        }
+//        }
     }
 
     private void autoDismiss() {
@@ -210,19 +210,19 @@ public class TipDialog extends DialogBase {
                 waitDialogTemp = null;
             };
 
-            if (waitDialog == null) {
-                waitDialogTemp.setTip(icoResId);
-                waitDialogTemp.setMessage(message);
-                waitDialogTemp.autoDismiss();
-                return waitDialogTemp;
-            } else {
+//            if (waitDialog == null) {
+//                waitDialogTemp.setTip(icoResId);
+//                waitDialogTemp.setMessage(message);
+//                waitDialogTemp.autoDismiss();
+//                return waitDialogTemp;
+//            } else {
                 waitDialog.message = message;
                 waitDialog.setTip(icoResId);
                 waitDialog.showDialog(context);
                 waitDialog.autoDismiss();
                 return waitDialog;
             }
-        }
+//        }
     }
 
     public static TipDialog show(Context context, int messageResId, int icoResId) {

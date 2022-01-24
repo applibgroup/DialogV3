@@ -144,7 +144,7 @@ public abstract class DialogBase {
         dismissedFlag = false;
         if (DialogSettings.dialogLifeCycleListener != null)
             DialogSettings.dialogLifeCycleListener.onCreate(this);
-        styleId = style;
+			styleId = style;
         dismissEvent = new OnDismissListener() {
             @Override
             public void onDismiss() {

@@ -213,12 +213,13 @@ public class ShareDialog extends DialogBase {
                             Text txtLabel = (Text) itemView.findComponentById(ResourceTable.Id_txt_label);
                             imgIcon.setImageBitmap(item.icon);
                             txtLabel.setText(item.getText().toString());
+                            txtLabel.setTextColor(Color.BLACK);
 
-                            if (theme == DialogSettings.THEME.DARK) {
-                                txtLabel.setTextColor(Color.BLACK);
-                            } else {
-                                txtLabel.setTextColor(Color.BLACK);
-                            }
+//                            if (theme == DialogSettings.THEME.DARK) {
+//                                txtLabel.setTextColor(Color.BLACK);
+//                            } else {
+//                                txtLabel.setTextColor(Color.BLACK);
+//                            }
 
                             final int index = i;
                             itemView.setClickedListener(v -> {
