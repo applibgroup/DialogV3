@@ -183,7 +183,8 @@ public class IOSItemImageView extends Image {
             mDrawableH = texture.getHeight();
             return bitmap;
         } catch (Exception e) {
-            e.printStackTrace();
+            e.getLocalizedMessage();
+            //e.printStackTrace();
             return null;
         }
     }

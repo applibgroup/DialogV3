@@ -352,7 +352,7 @@ public class TipDialog extends DialogBase {
                     blurFrontColor = Color.argb(blurAlpha, 0, 0, 0);
                     break;
             }
-            if (isNull(message)) {
+            if (message == null) {
                 txtInfo.setVisibility(Component.HIDE);
             } else {
                 txtInfo.setVisibility(Component.VISIBLE);
