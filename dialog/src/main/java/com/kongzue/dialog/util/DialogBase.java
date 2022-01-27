@@ -148,7 +148,7 @@ public abstract class DialogBase {
         dismissEvent = new OnDismissListener() {
             @Override
             public void onDismiss() {
-                dismissEvent();
+                dismissEventCall();
                 dismissedFlag = true;
                 isShow = false;
                 dialogList.remove(dialogBase);
@@ -170,7 +170,8 @@ public abstract class DialogBase {
         }
     }
 
-    protected void dismissEvent() {
+    protected void dismissEventCall() {
+        //TODO
     }
 
     protected void showNext(Context context) {
@@ -216,22 +217,15 @@ public abstract class DialogBase {
         dialog = new WeakReference<>(new DialogHelper(context).setLayoutId(dialogBase, layoutId));
         dialog.get().showDialog(context);
         dialog.get().setSize(ComponentContainer.LayoutConfig.MATCH_CONTENT, ComponentContainer.LayoutConfig.MATCH_CONTENT);
+        instanceCheck();
+
+    }
+    protected void instanceCheck(){
         if (dialogBase instanceof BottomMenu) {
             dialog.get().setTransparent(true);
             dialog.get().setAlignment(layoutAlign).setAutoClosable(true).show();
         } else if ((dialogBase instanceof InputDialog)) {
-            if (DialogSettings.style == DialogSettings.STYLE.STYLE_IOS) {
-                if (DialogSettings.customInputDialog) {
-                    dialog.get().setSize(850, 850);
-                } else {
-                    dialog.get().setSize(850, ComponentContainer.LayoutConfig.MATCH_CONTENT);
-                }
-                dialog.get().setAlignment(layoutAlign).setOffset(0, -100);
-                dialog.get().setCornerRadius(50).setAutoClosable(true).show();
-            } else {
-                dialog.get().setAlignment(layoutAlign).setOffset(0, -100);
-                dialog.get().setAutoClosable(true).setCornerRadius(50).show();
-            }
+            styleCheck();
         } else if ((dialogBase instanceof MessageDialog) && ((DialogSettings.style == DialogSettings.STYLE.STYLE_IOS)
                 || (DialogSettings.style == DialogSettings.STYLE.STYLE_MIUI))) {
             dialog.get().setAlignment(layoutAlign).setCornerRadius(50).setAutoClosable(true).show();
@@ -247,7 +241,20 @@ public abstract class DialogBase {
             dialog.get().setAlignment(layoutAlign).setTransparent(true).setAutoClosable(true).show();
         }
     }
-
+    protected void styleCheck(){
+        if (DialogSettings.style == DialogSettings.STYLE.STYLE_IOS) {
+            if (DialogSettings.customInputDialog) {
+                dialog.get().setSize(850, 850);
+            } else {
+                dialog.get().setSize(850, ComponentContainer.LayoutConfig.MATCH_CONTENT);
+            }
+            dialog.get().setAlignment(layoutAlign).setOffset(0, -100);
+            dialog.get().setCornerRadius(50).setAutoClosable(true).show();
+        } else {
+            dialog.get().setAlignment(layoutAlign).setOffset(0, -100);
+            dialog.get().setAutoClosable(true).setCornerRadius(50).show();
+        }
+    }
     public static void showKeyboard(DialogHelper dialog) {
         new EventHandler(EventRunner.create()).postTask(new Runnable() {
             @Override

@@ -44,6 +44,14 @@ import java.util.List;
 
 public class MainAbilitySlice extends AbilitySlice {
     private static final String TAG = Notification.class.getSimpleName();
+    private static final String CANCEL = "cancel";
+    private static final String PROMPT = "prompt";
+    private static final String MENU1 = "Menu1";
+    private static final String MENU2 = "Menu2";
+    private static final String MENU3 = "Menu3";
+    private static final String CLICKED = "Clicked：";
+
+    private static final String CUSTOMLAYOUT = "Clicked on Custom Layout";
     ComponentContainer rootLayout;
     Button messageDialog, selectionDialog, waitdialog, waitpromptdialog, input, serialization, closeability, dialogbox, inputbox, showBottomMenuBtn, showBottomMenuWithHeaderBtb, customBottomMenu;
     RadioButton ios, material, kongzue, miui, brightcolor, dark;
@@ -123,7 +131,7 @@ public class MainAbilitySlice extends AbilitySlice {
         });
 
         selectionDialog.setClickedListener(component -> {
-            MessageDialog.show(getContext(), "Tips", "This is a message", "Ok", "cancel", "back")
+            MessageDialog.show(getContext(), "Tips", "This is a message", "Ok", CANCEL, "back")
                     .setButtonOrientation(LayoutAlignment.VERTICAL_CENTER);
         });
 
@@ -157,7 +165,7 @@ public class MainAbilitySlice extends AbilitySlice {
                             TipDialog.show(getContext(), "success", TipDialog.TYPE.SUCCESS).setOnDismissListener(new OnDismissListener() {
                                 @Override
                                 public void onDismiss() {
-
+                                    //TODO
                                 }
                             });
                         });
@@ -171,7 +179,7 @@ public class MainAbilitySlice extends AbilitySlice {
             @Override
             public void onClick(Component component) {
                 InputDialog.build(getContext())
-                        .setTitle("prompt").setMessage("Please enter the password(123456)")
+                        .setTitle(PROMPT).setMessage("Please enter the password(123456)")
                         .setInputText("111111")
                         .setOkButton("ok", new OnInputDialogButtonClickListener(){
 
@@ -186,7 +194,7 @@ public class MainAbilitySlice extends AbilitySlice {
                                 }
                             }
                         })
-                        .setCancelButton("cancel")
+                        .setCancelButton(CANCEL)
                         .setHintText("Please enter the password")
                         .setInputInfo(new InputInfo()
                                         .setMAX_LENGTH(6)
@@ -220,10 +228,10 @@ public class MainAbilitySlice extends AbilitySlice {
                                 return true;
                             }
                         });
-                 MessageDialog.show(getContext(), "Longitudinal arrangement", "If you're using iOS or Kongzue, the buttons can be arranged vertically to provide more options", "ok", "cancel", "whatelse?")
+                 MessageDialog.show(getContext(), "Longitudinal arrangement", "If you're using iOS or Kongzue, the buttons can be arranged vertically to provide more options", "ok", CANCEL, "whatelse?")
                         .setButtonOrientation(LayoutAlignment.VERTICAL_CENTER);
                 InputDialog.show(getContext(), "Input DialogBox", "You can also show just one button, like this", "ok");
-                MessageDialog.show(getContext(), "Tips", "The prompt dialog box is not affected by modalization and can be displayed immediately as the dialog box is displayed", "Give me a hint", "cancel")
+                MessageDialog.show(getContext(), "Tips", "The prompt dialog box is not affected by modalization and can be displayed immediately as the dialog box is displayed", "Give me a hint", CANCEL)
                         .setOnOkButtonClickListener(new OnDialogButtonClickListener() {
                             @Override
                             public boolean onClick() {
@@ -243,7 +251,7 @@ public class MainAbilitySlice extends AbilitySlice {
         closeability.setClickedListener(new Component.ClickedListener() {
             @Override
             public void onClick(Component component) {
-                MessageDialog.show(getContext(), "Tips", "When an AlertDialog is displayed, if the ability attached to it is finished, the WindowLeaked error will occur, causing the program to crash. However, Kongzue Dialog does not have this problem. You can click the button at the bottom to start and wait for a few seconds. The ability will be finished. But you won't have any crash issues", "Starts crashing", "cancel")
+                MessageDialog.show(getContext(), "Tips", "When an AlertDialog is displayed, if the ability attached to it is finished, the WindowLeaked error will occur, causing the program to crash. However, Kongzue Dialog does not have this problem. You can click the button at the bottom to start and wait for a few seconds. The ability will be finished. But you won't have any crash issues", "Starts crashing", CANCEL)
                         .setMessageTextInfo(new TextInfo().setGravity(TextAlignment.LEFT))
                         .setOnOkButtonClickListener(new OnDialogButtonClickListener() {
                             @Override
@@ -282,14 +290,14 @@ public class MainAbilitySlice extends AbilitySlice {
         dialogbox = (Button)findComponentById(ResourceTable.Id_dialogboxcustomize);
         dialogbox.setClickedListener(component -> {
             DialogSettings.customDialog = true;
-            MessageDialog.show(getContext(), "prompt", "This window comes with a custom layout.", "ok")
+            MessageDialog.show(getContext(), PROMPT, "This window comes with a custom layout.", "ok")
                     .setCustomView(ResourceTable.Layout_layout_custom, new MessageDialog.OnBindView() {
                         @Override
                         public void onBind(MessageDialog dialog, Component v) {
                             v.setClickedListener(new Component.ClickedListener() {
                                 @Override
                                 public void onClick(Component component) {
-                                    toast("Clicked on Custom Layout");
+                                    toast(CUSTOMLAYOUT);
                                 }
                             });
                         }
@@ -299,14 +307,14 @@ public class MainAbilitySlice extends AbilitySlice {
         inputbox = (Button)findComponentById(ResourceTable.Id_inputboxcustomize);
         inputbox.setClickedListener(component -> {
             DialogSettings.customInputDialog = true;
-            InputDialog.show(getContext(), "prompt", "This window comes with a custom layout.", "Got it")
+            InputDialog.show(getContext(), PROMPT, "This window comes with a custom layout.", "Got it")
                     .setCustomView(ResourceTable.Layout_layout_custom, new InputDialog.OnBindView() {
                         @Override
                         public void onBind(InputDialog dialog, Component v) {
                             v.setClickedListener(new Component.ClickedListener() {
                                 @Override
                                 public void onClick(Component component) {
-                                    toast("Clicked on Custom Layout");
+                                    toast(CUSTOMLAYOUT);
                                 }
                             });
                         }
@@ -316,27 +324,27 @@ public class MainAbilitySlice extends AbilitySlice {
 
         showBottomMenuBtn = (Button) findComponentById(ResourceTable.Id_btn_showBottomMenu);
         showBottomMenuBtn.setClickedListener(component -> {
-            BottomMenu.show(this, new String[]{"Menu1", "Menu2", "Menu3"}, new OnMenuItemClickListener() {
+            BottomMenu.show(this, new String[]{MENU1, MENU2, MENU3}, new OnMenuItemClickListener() {
                 @Override
                 public void onClick(String text, int index) {
-                    toast("Clicked：" + text);
+                    toast(CLICKED + text);
                 }
             });
         });
 
         showBottomMenuWithHeaderBtb = (Button) findComponentById(ResourceTable.Id_btn_showBottomMenuWithHeader);
         showBottomMenuWithHeaderBtb.setClickedListener(component -> {
-            BottomMenu.show(this, "Here is the title text", new String[]{"Menu1", "Menu2", "Menu3", "Menu4", "Menu5", "Menu5", "Menu5", "Menu5", "Menu5", "Menu5"}, new OnMenuItemClickListener() {
+            BottomMenu.show(this, "Here is the title text", new String[]{MENU1, MENU2, MENU3, "Menu4", "Menu6", "Menu7", "Menu8", "Menu9", "Menu10", "Menu11"}, new OnMenuItemClickListener() {
                 @Override
                 public void onClick(String text, int index) {
-                    toast("Clicked：" + text);
+                    toast(CLICKED + text);
                 }
             });
         });
 
         customBottomMenu = (Button) findComponentById(ResourceTable.Id_btn_customizeBottomMenu);
         customBottomMenu.setClickedListener(component -> {
-            BottomMenu.show(this, new String[]{"Menu1", "Menu2", "Menu3"}, new OnMenuItemClickListener() {
+            BottomMenu.show(this, new String[]{MENU1, MENU2, MENU3}, new OnMenuItemClickListener() {
                 @Override
                 public void onClick(String text, int index) {
                      toast(text);
@@ -347,7 +355,7 @@ public class MainAbilitySlice extends AbilitySlice {
                     v.setClickedListener(new Component.ClickedListener() {
                         @Override
                         public void onClick(Component component) {
-                            toast("Clicked on Custom Layout");
+                            toast(CUSTOMLAYOUT);
                         }
                     });
                 }
@@ -377,7 +385,7 @@ public class MainAbilitySlice extends AbilitySlice {
         });
 
         btnCustomNotification.setClickedListener(component -> {
-            Notification.show(this, "prompt", "Prompt Message",
+            Notification.show(this, PROMPT, "Prompt Message",
                     ResourceTable.Media_ico_wechat).setCustomView(ResourceTable.Layout_custom_notification_button, (btnCustomNotification, v) -> {
                 Text btnReply;
                 Text dismiss;
@@ -393,9 +401,10 @@ public class MainAbilitySlice extends AbilitySlice {
         });
 
         btnNotify.setClickedListener(component -> {
-            Notification.show(this, "prompt", "Prompt message", ResourceTable.Media_ico_wechat).setOnNotificationClickListener(new OnNotificationClickListener() {
+            Notification.show(this, PROMPT, "Prompt message", ResourceTable.Media_ico_wechat).setOnNotificationClickListener(new OnNotificationClickListener() {
                 @Override
                 public void onClick() {
+                    //TODO
                 }
             }).setOnDismissListener(() -> Log.d(TAG, "The news slipped away."));
         });
@@ -421,7 +430,7 @@ public class MainAbilitySlice extends AbilitySlice {
                     itemList.add(new ShareDialog.Item(getContext(), ResourceTable.Media_img_remind_material, "Keep"));
                 }
                 ShareDialog.show(getContext(), itemList, (shareDialog, index, item) -> {
-                    toast("Clicked：" + item.getText());
+                    toast(CLICKED + item.getText());
                     return false;
                 });
             }

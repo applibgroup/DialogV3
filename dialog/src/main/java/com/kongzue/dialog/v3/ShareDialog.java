@@ -193,6 +193,131 @@ public class ShareDialog extends DialogBase {
         if (onShowListener != null) onShowListener.onShow(this);
     }
 
+    private void colorCheck(Text txtLabel){
+        if (theme == DialogSettings.THEME.DARK) {
+            txtLabel.setTextColor(new Color(context.get().getColor(ResourceTable.Color_materialDarkTextColor)));
+        } else {
+            txtLabel.setTextColor(new Color(context.get().getColor(ResourceTable.Color_black)));
+        }
+    }
+    private void styleIOS(){
+        if (items != null) {
+            boxItem.removeAllComponents();
+            for (int i = 0; i < items.size(); i++) {
+                final Item item = items.get(i);
+                Component itemView = LayoutScatter.getInstance(context.get()).parse(ResourceTable.Layout_item_share_ios, null, false);
+
+                final IOSItemImageView imgIcon = (IOSItemImageView) itemView.findComponentById(ResourceTable.Id_img_icon);
+                Text txtLabel = (Text) itemView.findComponentById(ResourceTable.Id_txt_label);
+                imgIcon.setImageBitmap(item.icon);
+                txtLabel.setText(item.getText().toString());
+                txtLabel.setTextColor(Color.BLACK);
+
+//                            if (theme == DialogSettings.THEME.DARK) {
+//                                txtLabel.setTextColor(Color.BLACK);
+//                            } else {
+//                                txtLabel.setTextColor(Color.BLACK);
+//                            }
+
+                final int index = i;
+                itemView.setClickedListener(v -> {
+                    if (onItemClickListener != null) {
+                        if (!onItemClickListener.onClick(ShareDialog.this, index, item)) {
+                            doDismiss();
+                        }
+                    } else {
+                        doDismiss();
+                    }
+                });
+                boxItem.addComponent(itemView);
+            }
+        }
+    }
+
+    private void styleMaterial(){
+        if (items != null) {
+            boxItem.removeAllComponents();
+            int ht = dip2px(100);
+            int wd = calcWidth();
+            for (int i = 0; i < items.size(); i++) {
+                final Item item = items.get(i);
+                final Component itemView = LayoutScatter.getInstance(context.get()).parse(ResourceTable.Layout_item_share_material, null, false);
+
+                final Image imgIcon = (Image) itemView.findComponentById(ResourceTable.Id_img_icon);
+                Text txtLabel = (Text) itemView.findComponentById(ResourceTable.Id_txt_label);
+
+                imgIcon.setBackground(new PixelMapElement(item.getIcon()));
+                txtLabel.setText(item.getText().toString());
+
+                colorCheck(txtLabel);
+
+                final int index = i;
+                itemView.setClickedListener(v -> {
+                    if (onItemClickListener != null) {
+                        if (!onItemClickListener.onClick(ShareDialog.this, index, item)) {
+                            doDismiss();
+                        }
+                    } else {
+                        doDismiss();
+                    }
+                });
+                itemView.setHeight(ht);
+                itemView.setWidth(wd);
+                boxItem.addComponent(itemView);
+            }
+        }
+    }
+
+    private void styleKongzue(){
+        if (items != null) {
+            boxItem.removeAllComponents();
+            int ht = dip2px(100);
+            int wd = calcWidth();
+            for (int i = 0; i < items.size(); i++) {
+                final Item item = items.get(i);
+                final Component itemView = LayoutScatter.getInstance(context.get()).parse(ResourceTable.Layout_item_share_kongzue, null, false);
+
+                final IOSItemImageView imgIcon = (IOSItemImageView) itemView.findComponentById(ResourceTable.Id_img_icon);
+                Text txtLabel = (Text) itemView.findComponentById(ResourceTable.Id_txt_label);
+                imgIcon.setScaleMode(Image.ScaleMode.ZOOM_CENTER);
+                imgIcon.setBackground(new PixelMapElement(item.getIcon()));
+                txtLabel.setText(item.getText().toString());
+                colorCheck(txtLabel);
+
+                useTextInfo(txtLabel, itemTextInfo);
+
+                final int index = i;
+                itemView.setClickedListener(v -> {
+                    if (onItemClickListener != null) {
+                        if (!onItemClickListener.onClick(ShareDialog.this, index, item)) {
+                            doDismiss();
+                        }
+                    } else {
+                        doDismiss();
+                    }
+                });
+                itemView.setHeight(ht);
+                itemView.setWidth(wd);
+                boxItem.addComponent(itemView);
+            }
+        }
+    }
+
+    private void customViewCheck(){
+        if (customView != null) {
+            boxCustom.removeAllComponents();
+            if (customView.getComponentParent() != null && customView.getComponentParent() instanceof ComponentContainer) {
+                customView.getComponentParent().removeComponent(customView);
+            }
+            boxCustom.addComponent(customView);
+            if (onBindView != null) onBindView.onBind(this, customView);
+            boxCustom.setVisibility(Component.VISIBLE);
+            if (titleSplitLine != null) titleSplitLine.setVisibility(Component.VISIBLE);
+        } else {
+            boxCustom.setVisibility(Component.HIDE);
+        }
+    }
+
     @Override
     public void refreshView() {
         if (cancelButtonTextInfo == null) cancelButtonTextInfo = buttonTextInfo;
@@ -203,114 +328,14 @@ public class ShareDialog extends DialogBase {
         if (rootView != null) {
             switch (style) {
                 case STYLE_IOS:
-                    if (items != null) {
-                        boxItem.removeAllComponents();
-                        for (int i = 0; i < items.size(); i++) {
-                            final Item item = items.get(i);
-                            Component itemView = LayoutScatter.getInstance(context.get()).parse(ResourceTable.Layout_item_share_ios, null, false);
-
-                            final IOSItemImageView imgIcon = (IOSItemImageView) itemView.findComponentById(ResourceTable.Id_img_icon);
-                            Text txtLabel = (Text) itemView.findComponentById(ResourceTable.Id_txt_label);
-                            imgIcon.setImageBitmap(item.icon);
-                            txtLabel.setText(item.getText().toString());
-                            txtLabel.setTextColor(Color.BLACK);
-
-//                            if (theme == DialogSettings.THEME.DARK) {
-//                                txtLabel.setTextColor(Color.BLACK);
-//                            } else {
-//                                txtLabel.setTextColor(Color.BLACK);
-//                            }
-
-                            final int index = i;
-                            itemView.setClickedListener(v -> {
-                                if (onItemClickListener != null) {
-                                    if (!onItemClickListener.onClick(ShareDialog.this, index, item)) {
-                                        doDismiss();
-                                    }
-                                } else {
-                                    doDismiss();
-                                }
-                            });
-                            boxItem.addComponent(itemView);
-                        }
-                    }
+                    styleIOS();
                     break;
                 case STYLE_MATERIAL:
-                    if (items != null) {
-                        boxItem.removeAllComponents();
-                        int ht = dip2px(100);
-                        int wd = calcWidth();
-                        for (int i = 0; i < items.size(); i++) {
-                            final Item item = items.get(i);
-                            final Component itemView = LayoutScatter.getInstance(context.get()).parse(ResourceTable.Layout_item_share_material, null, false);
-
-                            final Image imgIcon = (Image) itemView.findComponentById(ResourceTable.Id_img_icon);
-                            Text txtLabel = (Text) itemView.findComponentById(ResourceTable.Id_txt_label);
-
-                            imgIcon.setBackground(new PixelMapElement(item.getIcon()));
-                            txtLabel.setText(item.getText().toString());
-
-                            if (theme == DialogSettings.THEME.DARK) {
-                                txtLabel.setTextColor(new Color(context.get().getColor(ResourceTable.Color_materialDarkTextColor)));
-                            } else {
-                                txtLabel.setTextColor(new Color(context.get().getColor(ResourceTable.Color_black)));
-                            }
-
-                            final int index = i;
-                            itemView.setClickedListener(v -> {
-                                if (onItemClickListener != null) {
-                                    if (!onItemClickListener.onClick(ShareDialog.this, index, item)) {
-                                        doDismiss();
-                                    }
-                                } else {
-                                    doDismiss();
-                                }
-                            });
-                            itemView.setHeight(ht);
-                            itemView.setWidth(wd);
-                            boxItem.addComponent(itemView);
-                        }
-                    }
+                    styleMaterial();
                     break;
                 case STYLE_MIUI:
                 case STYLE_KONGZUE:
-                    if (items != null) {
-                        boxItem.removeAllComponents();
-                        int ht = dip2px(100);
-                        int wd = calcWidth();
-                        for (int i = 0; i < items.size(); i++) {
-                            final Item item = items.get(i);
-                            final Component itemView = LayoutScatter.getInstance(context.get()).parse(ResourceTable.Layout_item_share_kongzue, null, false);
-
-                            final IOSItemImageView imgIcon = (IOSItemImageView) itemView.findComponentById(ResourceTable.Id_img_icon);
-                            Text txtLabel = (Text) itemView.findComponentById(ResourceTable.Id_txt_label);
-                            imgIcon.setScaleMode(Image.ScaleMode.ZOOM_CENTER);
-                            imgIcon.setBackground(new PixelMapElement(item.getIcon()));
-                            txtLabel.setText(item.getText().toString());
-
-                            if (theme == DialogSettings.THEME.DARK) {
-                                txtLabel.setTextColor(new Color(context.get().getColor(ResourceTable.Color_materialDarkTextColor)));
-                            } else {
-                                txtLabel.setTextColor(new Color(context.get().getColor(ResourceTable.Color_black)));
-                            }
-
-                            useTextInfo(txtLabel, itemTextInfo);
-
-                            final int index = i;
-                            itemView.setClickedListener(v -> {
-                                if (onItemClickListener != null) {
-                                    if (!onItemClickListener.onClick(ShareDialog.this, index, item)) {
-                                        doDismiss();
-                                    }
-                                } else {
-                                    doDismiss();
-                                }
-                            });
-                            itemView.setHeight(ht);
-                            itemView.setWidth(wd);
-                            boxItem.addComponent(itemView);
-                        }
-                    }
+                    styleKongzue();
                     break;
             }
 
@@ -324,18 +349,7 @@ public class ShareDialog extends DialogBase {
                 btnCancel.setText(cancelButtonText.toString());
                 btnCancel.setClickedListener(v -> doDismiss());
             }
-            if (customView != null) {
-                boxCustom.removeAllComponents();
-                if (customView.getComponentParent() != null && customView.getComponentParent() instanceof ComponentContainer) {
-                    customView.getComponentParent().removeComponent(customView);
-                }
-                boxCustom.addComponent(customView);
-                if (onBindView != null) onBindView.onBind(this, customView);
-                boxCustom.setVisibility(Component.VISIBLE);
-                if (titleSplitLine != null) titleSplitLine.setVisibility(Component.VISIBLE);
-            } else {
-                boxCustom.setVisibility(Component.HIDE);
-            }
+            customViewCheck();
 
             refreshTextViews();
         }
@@ -523,7 +537,7 @@ public class ShareDialog extends DialogBase {
         return onDismissListener == null ? new OnDismissListener() {
             @Override
             public void onDismiss() {
-
+                //TODO
             }
         } : onDismissListener;
     }
@@ -537,7 +551,7 @@ public class ShareDialog extends DialogBase {
         return onShowListener == null ? new OnShowListener() {
             @Override
             public void onShow(DialogBase dialog) {
-
+                //TODO
             }
         } : onShowListener;
     }

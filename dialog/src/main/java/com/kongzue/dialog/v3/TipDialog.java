@@ -268,10 +268,77 @@ public class TipDialog extends DialogBase {
         }
     }
 
+    private void lightTheme(int blurFrontColor){
+        tipbox.setBackground(ElementScatter.getInstance(tipbox.getContext()).parse(ResourceTable.Graphic_dialog_light_shape));
+        int darkColor = Color.rgb(0, 0, 0);
+        if (progress != null) {
+            progress.setColor(Color.BLACK);
+        }
+        txtInfo.setTextColor(new Color(darkColor));
+        if (type != null) {
+            boxProgress.setVisibility(Component.HIDE);
+            boxTip.setVisibility(Component.VISIBLE);
+            switch (type) {
+                case OTHER:
+                    boxTip.setBackground(tipImage);
+                    break;
+                case ERROR:
+                    PixelMapElement pixelMap = ResTUtil.getPixelMapDrawable(boxBody.getContext(), ResourceTable.Media_img_error_dark);
+                    boxTip.setBackground(pixelMap);
+                    break;
+                case WARNING:
+                    PixelMapElement pixelMap1 = ResTUtil.getPixelMapDrawable(boxBody.getContext(), ResourceTable.Media_img_warning_dark);
+                    boxTip.setBackground(pixelMap1);
+                    break;
+                case SUCCESS:
+                    PixelMapElement pixelMap2 = ResTUtil.getPixelMapDrawable(boxBody.getContext(), ResourceTable.Media_img_finish_dark);
+                    boxTip.setBackground(pixelMap2);
+                    break;
+            }
+        } else {
+            boxProgress.setVisibility(Component.VISIBLE);
+            boxTip.setVisibility(Component.HIDE);
+        }
+    }
+
+    private void darkTheme(int blurFrontColor){
+        tipbox.setBackground(ElementScatter.getInstance(boxTip.getContext()).parse(ResourceTable.Graphic_dialog_dark_shape));
+        int lightColor = Color.rgb(255, 255, 255);
+        if (progress != null) {
+            progress.setColor(Color.WHITE);
+        }
+        txtInfo.setTextColor(new Color(lightColor));
+        if (type != null) {
+            boxProgress.setVisibility(Component.HIDE);
+            boxTip.setVisibility(Component.VISIBLE);
+            switch (type) {
+                case OTHER:
+                    boxTip.setBackground(tipImage);
+                    break;
+                case ERROR:
+                    PixelMapElement pixelMap = ResTUtil.getPixelMapDrawable(boxBody.getContext(), ResourceTable.Media_img_error);
+                    boxTip.setBackground(pixelMap);
+                    break;
+                case WARNING:
+                    PixelMapElement pixelMap1 = ResTUtil.getPixelMapDrawable(boxBody.getContext(), ResourceTable.Media_img_warning);
+                    boxTip.setBackground(pixelMap1);
+                    break;
+                case SUCCESS:
+                    PixelMapElement pixelMap2 = ResTUtil.getPixelMapDrawable(boxBody.getContext(), ResourceTable.Media_img_finish);
+                    boxTip.setBackground(pixelMap2);
+                    break;
+            }
+        } else {
+            boxProgress.setVisibility(Component.VISIBLE);
+            boxTip.setVisibility(Component.HIDE);
+        }
+    }
+
     @Override
     public void refreshView() {
         if (rootView != null) {
-            final int bkgResId, blurFrontColor;
+            final int bkgResId;
+            final int blurFrontColor = Color.argb(blurAlpha, 0, 0, 0);;
             if (message.length() > 14) {
                 tipbox.setLayoutConfig(new ComponentContainer.LayoutConfig(ComponentContainer.LayoutConfig.MATCH_CONTENT, 400));
             } else {
@@ -283,73 +350,12 @@ public class TipDialog extends DialogBase {
             }
             switch (tipTheme) {
                 case LIGHT:
-                    tipbox.setBackground(ElementScatter.getInstance(tipbox.getContext()).parse(ResourceTable.Graphic_dialog_light_shape));
-                    int darkColor = Color.rgb(0, 0, 0);
-                    blurFrontColor = Color.argb(blurAlpha, 0, 0, 0);
-                    if (progress != null) {
-                        progress.setColor(Color.BLACK);
-                    }
-                    txtInfo.setTextColor(new Color(darkColor));
-                    if (type != null) {
-                        boxProgress.setVisibility(Component.HIDE);
-                        boxTip.setVisibility(Component.VISIBLE);
-                        switch (type) {
-                            case OTHER:
-                                boxTip.setBackground(tipImage);
-                                break;
-                            case ERROR:
-                                PixelMapElement pixelMap = ResTUtil.getPixelMapDrawable(boxBody.getContext(), ResourceTable.Media_img_error_dark);
-                                boxTip.setBackground(pixelMap);
-                                break;
-                            case WARNING:
-                                PixelMapElement pixelMap1 = ResTUtil.getPixelMapDrawable(boxBody.getContext(), ResourceTable.Media_img_warning_dark);
-                                boxTip.setBackground(pixelMap1);
-                                break;
-                            case SUCCESS:
-                                PixelMapElement pixelMap2 = ResTUtil.getPixelMapDrawable(boxBody.getContext(), ResourceTable.Media_img_finish_dark);
-                                boxTip.setBackground(pixelMap2);
-                                break;
-                        }
-                    } else {
-                        boxProgress.setVisibility(Component.VISIBLE);
-                        boxTip.setVisibility(Component.HIDE);
-                    }
+                    lightTheme(blurFrontColor);
                     break;
                 case DARK:
-                    tipbox.setBackground(ElementScatter.getInstance(boxTip.getContext()).parse(ResourceTable.Graphic_dialog_dark_shape));
-                    int lightColor = Color.rgb(255, 255, 255);
-                    blurFrontColor = Color.argb(blurAlpha, 0, 0, 0);
-                    if (progress != null) {
-                        progress.setColor(Color.WHITE);
-                    }
-                    txtInfo.setTextColor(new Color(lightColor));
-                    if (type != null) {
-                        boxProgress.setVisibility(Component.HIDE);
-                        boxTip.setVisibility(Component.VISIBLE);
-                        switch (type) {
-                            case OTHER:
-                                boxTip.setBackground(tipImage);
-                                break;
-                            case ERROR:
-                                PixelMapElement pixelMap = ResTUtil.getPixelMapDrawable(boxBody.getContext(), ResourceTable.Media_img_error);
-                                boxTip.setBackground(pixelMap);
-                                break;
-                            case WARNING:
-                                PixelMapElement pixelMap1 = ResTUtil.getPixelMapDrawable(boxBody.getContext(), ResourceTable.Media_img_warning);
-                                boxTip.setBackground(pixelMap1);
-                                break;
-                            case SUCCESS:
-                                PixelMapElement pixelMap2 = ResTUtil.getPixelMapDrawable(boxBody.getContext(), ResourceTable.Media_img_finish);
-                                boxTip.setBackground(pixelMap2);
-                                break;
-                        }
-                    } else {
-                        boxProgress.setVisibility(Component.VISIBLE);
-                        boxTip.setVisibility(Component.HIDE);
-                    }
+                    darkTheme(blurFrontColor);
                     break;
                 default:
-                    blurFrontColor = Color.argb(blurAlpha, 0, 0, 0);
                     break;
             }
                 txtInfo.setVisibility(Component.VISIBLE);
@@ -361,6 +367,7 @@ public class TipDialog extends DialogBase {
 
     @Override
     public void show(Context context) {
+        //TODO
     }
 
     public void showNoAutoDismiss(Context context) {

@@ -123,7 +123,7 @@ public class CustomDialog extends DialogBase {
 
     @Override
     public void refreshView() {
-
+        //TODO
     }
 
     @Override
@@ -143,7 +143,7 @@ public class CustomDialog extends DialogBase {
         return onDismissListener == null ? new OnDismissListener() {
             @Override
             public void onDismiss() {
-
+                //TODO
             }
         } : onDismissListener;
     }
@@ -157,7 +157,7 @@ public class CustomDialog extends DialogBase {
         return onShowListener == null ? new OnShowListener() {
             @Override
             public void onShow(DialogBase dialog) {
-
+                //TODO
             }
         } : onShowListener;
     }

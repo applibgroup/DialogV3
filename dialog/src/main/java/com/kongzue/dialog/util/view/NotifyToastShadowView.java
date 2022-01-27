@@ -61,54 +61,58 @@ public class NotifyToastShadowView extends DirectionalLayout implements Componen
                     break;
                 case TouchEvent.PRIMARY_POINT_UP:
                 case TouchEvent.CANCEL:
-                    isTouchDown = false;
-                    if (getBottom() > -dip2px(5)) {
-                        DirectionalLayout BoxNotic = (DirectionalLayout) findComponentById(ResourceTable.Id_btn_notic);
-                        if (touchEvent.getPointerScreenPosition(0).getY() > 0 && touchEvent.getPointerScreenPosition(0).getY() < BoxNotic.getHeight()) {
-                            if (onNotificationClickListener != null)
-                                onNotificationClickListener.onClick();
-                        }
-                    }
-                    if (getBottom() > -dip2px(30)) {
-                        createAnimatorProperty().moveToY(0).setDuration(100).setStateChangedListener(null);
-                    } else {
-                        createAnimatorProperty().moveToY(-getHeight()).alpha(0).setDuration(200).setStateChangedListener(new Animator.StateChangedListener() {
-                            @Override
-                            public void onStart(Animator animator) {
-
-                            }
-
-                            @Override
-                            public void onStop(Animator animator) {
-
-                            }
-
-                            @Override
-                            public void onCancel(Animator animator) {
-
-                            }
-
-                            @Override
-                            public void onEnd(Animator animator) {
-                                setVisibility(HIDE);
-                                if (onDismissListener != null) onDismissListener.onDismiss();
-                            }
-
-                            @Override
-                            public void onPause(Animator animator) {
-                            }
-
-                            @Override
-                            public void onResume(Animator animator) {
-
-                            }
-                        });
-                    }
+                    createAnimator(touchEvent);
                     break;
             }
             return true;
         }
         return false;
+    }
+    protected void createAnimator(TouchEvent touchEvent){
+        isTouchDown = false;
+        if (getBottom() > -dip2px(5)) {
+            DirectionalLayout BoxNotic = (DirectionalLayout) findComponentById(ResourceTable.Id_btn_notic);
+            if (touchEvent.getPointerScreenPosition(0).getY() > 0 && touchEvent.getPointerScreenPosition(0).getY() < BoxNotic.getHeight()) {
+                if (onNotificationClickListener != null)
+                    onNotificationClickListener.onClick();
+            }
+        }
+        if (getBottom() > -dip2px(30)) {
+            createAnimatorProperty().moveToY(0).setDuration(100).setStateChangedListener(null);
+        } else {
+            createAnimatorProperty().moveToY(-getHeight()).alpha(0).setDuration(200).setStateChangedListener(new Animator.StateChangedListener() {
+                @Override
+                public void onStart(Animator animator) {
+                    //TODO
+                }
+
+                @Override
+                public void onStop(Animator animator) {
+                    //TODO
+                }
+
+                @Override
+                public void onCancel(Animator animator) {
+                    //TODO
+                }
+
+                @Override
+                public void onEnd(Animator animator) {
+                    setVisibility(HIDE);
+                    if (onDismissListener != null) onDismissListener.onDismiss();
+                }
+
+                @Override
+                public void onPause(Animator animator) {
+                    //TODO
+                }
+
+                @Override
+                public void onResume(Animator animator) {
+                    //TODO
+                }
+            });
+        }
     }
 
     public int dip2px(float dpValue) {

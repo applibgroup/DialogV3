@@ -15,8 +15,8 @@ public class ProgressView extends Text implements Component.LayoutRefreshedListe
     private Context mContext;
     private Color color = Color.BLACK;
     private float mStrokeWidth = 4.0f;
-    private static final String cpb_default_color = "cpb_default_color";
-    private static final String cpb_default_stroke_width = "cpb_default_stroke_width";
+    private static final String CPB_DEFAULT_COLOR = "cpb_default_color";
+    private static final String CPB_DEFAULT_STROKE_WIDTH = "cpb_default_stroke_width";
 
     public ProgressView(Context context, AttrSet attrs) {
         super(context, attrs);
@@ -25,8 +25,8 @@ public class ProgressView extends Text implements Component.LayoutRefreshedListe
         if (attrs != null) {
             mAttrSet = attrs;
             color = Color.BLACK;
-            mStrokeWidth = mAttrSet.getAttr(cpb_default_stroke_width).isPresent() ?
-                    mAttrSet.getAttr(cpb_default_stroke_width).get().getFloatValue() : 4.0f;
+            mStrokeWidth = mAttrSet.getAttr(CPB_DEFAULT_STROKE_WIDTH).isPresent() ?
+                    mAttrSet.getAttr(CPB_DEFAULT_STROKE_WIDTH).get().getFloatValue() : 4.0f;
         } else {
             color = Color.BLACK;
             mStrokeWidth = 4.0f;

@@ -203,8 +203,415 @@ public class MessageDialog extends DialogBase {
         }
     }
 
+    private void notCustomDialog(){
+        if (message.length() < 20) {
+            if (btnSelectPositive != null && !isNull(cancelButton) && !isNull(otherButton)) {
+                boxRoot.setLayoutConfig(new ComponentContainer.LayoutConfig(850, 800));
+            } else if ((btnSelectPositive != null && !isNull(cancelButton) && isNull(otherButton))
+                    || (btnSelectPositive != null && isNull(cancelButton) && !isNull(otherButton))) {
+                //  boxRoot.setLayoutConfig(new ComponentContainer.LayoutConfig(850, 500));
+            } else if (btnSelectPositive != null && isNull(cancelButton) && isNull(otherButton)) {
+                boxRoot.setLayoutConfig(new ComponentContainer.LayoutConfig(850, 400));
+            } else {
+                boxRoot.setLayoutConfig(new ComponentContainer.LayoutConfig(850, 400));
+            }
+        } else {
+            boxRoot.setLayoutConfig(new ComponentContainer.LayoutConfig(850, ComponentContainer.LayoutConfig.MATCH_CONTENT));
+        }
+    }
+
+    private void shortMsgKongzue(){
+        if (btnSelectPositive != null && !isNull(cancelButton) && !isNull(otherButton)) {
+            boxRoot.setLayoutConfig(new ComponentContainer.LayoutConfig(1050, 800));
+            splitHorizontal.setVisibility(Component.VISIBLE);
+            splitVertical1.setVisibility(Component.VISIBLE);
+            splitVertical2.setVisibility(Component.VISIBLE);
+            btnSelectPositive.setBackground(ElementScatter.getInstance(rootLayout.getContext()).parse(ResourceTable.Graphic_button_selectdialog_kongzhue_white));
+        } else if ((btnSelectPositive != null && !isNull(cancelButton) && isNull(otherButton))
+                || (btnSelectPositive != null && isNull(cancelButton) && !isNull(otherButton))) {
+            boxRoot.setLayoutConfig(new ComponentContainer.LayoutConfig(1050, 500));
+        } else if (btnSelectPositive != null && isNull(cancelButton) && isNull(otherButton)) {
+            splitHorizontal.setVisibility(Component.HIDE);
+            if (DialogSettings.customDialog) {
+                boxRoot.setLayoutConfig(new ComponentContainer.LayoutConfig(1050, 750));
+            } else {
+                boxRoot.setLayoutConfig(new ComponentContainer.LayoutConfig(1050, 400));
+            }
+        } else {
+            boxRoot.setLayoutConfig(new ComponentContainer.LayoutConfig(1050, 400));
+        }
+    }
+
+    private void longMsgKongzue(){
+        if (btnSelectPositive != null && !isNull(cancelButton) && !isNull(otherButton)) {
+            boxRoot.setLayoutConfig(new ComponentContainer.LayoutConfig(1050, ComponentContainer.LayoutConfig.MATCH_CONTENT));
+            splitHorizontal.setVisibility(Component.VISIBLE);
+            splitVertical1.setVisibility(Component.VISIBLE);
+            splitVertical2.setVisibility(Component.VISIBLE);
+            btnSelectPositive.setBackground(ElementScatter.getInstance(rootLayout.getContext()).parse(ResourceTable.Graphic_button_selectdialog_kongzhue_white));
+        } else if ((btnSelectPositive != null && !isNull(cancelButton) && isNull(otherButton))
+                || (btnSelectPositive != null && isNull(cancelButton) && !isNull(otherButton))) {
+            boxRoot.setLayoutConfig(new ComponentContainer.LayoutConfig(1050, ComponentContainer.LayoutConfig.MATCH_CONTENT));
+        } else if (btnSelectPositive != null && isNull(cancelButton) && isNull(otherButton)) {
+            splitHorizontal.setVisibility(Component.HIDE);
+            if (DialogSettings.customDialog) {
+                boxRoot.setLayoutConfig(new ComponentContainer.LayoutConfig(1050, 750));
+            } else {
+                boxRoot.setLayoutConfig(new ComponentContainer.LayoutConfig(1050, ComponentContainer.LayoutConfig.MATCH_CONTENT));
+            }
+        } else {
+            boxRoot.setLayoutConfig(new ComponentContainer.LayoutConfig(1050, ComponentContainer.LayoutConfig.MATCH_CONTENT));
+        }
+    }
+
+    private void shortMsgMaterial(){
+        if (btnSelectPositive != null && !isNull(cancelButton) && !isNull(otherButton)) {
+            boxRoot.setLayoutConfig(new ComponentContainer.LayoutConfig(1050, 500));
+        } else if ((btnSelectPositive != null && !isNull(cancelButton) && isNull(otherButton))
+                || (btnSelectPositive != null && isNull(cancelButton) && !isNull(otherButton))) {
+            boxRoot.setLayoutConfig(new ComponentContainer.LayoutConfig(1050, 500));
+        } else if (btnSelectPositive != null && isNull(cancelButton) && isNull(otherButton)) {
+            boxButton.setAlignment(LayoutAlignment.RIGHT);
+            btnSelectPositive.setMarginRight(80);
+            if (DialogSettings.customDialog) {
+                boxRoot.setLayoutConfig(new ComponentContainer.LayoutConfig(1050, 880));
+            } else {
+                boxRoot.setLayoutConfig(new ComponentContainer.LayoutConfig(1050, 500));
+            }
+        } else {
+            boxRoot.setLayoutConfig(new ComponentContainer.LayoutConfig(1050, 500));
+        }
+    }
+
+    private void longMsgMaterial(){
+        if (btnSelectPositive != null && !isNull(cancelButton) && !isNull(otherButton)) {
+            boxRoot.setLayoutConfig(new ComponentContainer.LayoutConfig(1050, ComponentContainer.LayoutConfig.MATCH_CONTENT));
+        } else if ((btnSelectPositive != null && !isNull(cancelButton) && isNull(otherButton))
+                || (btnSelectPositive != null && isNull(cancelButton) && !isNull(otherButton))) {
+            boxRoot.setLayoutConfig(new ComponentContainer.LayoutConfig(1050, ComponentContainer.LayoutConfig.MATCH_CONTENT));
+        } else if (btnSelectPositive != null && isNull(cancelButton) && isNull(otherButton)) {
+            boxButton.setAlignment(LayoutAlignment.RIGHT);
+            btnSelectPositive.setMarginRight(80);
+            if (DialogSettings.customDialog) {
+                boxRoot.setLayoutConfig(new ComponentContainer.LayoutConfig(1050, 880));
+            } else {
+                boxRoot.setLayoutConfig(new ComponentContainer.LayoutConfig(1050, ComponentContainer.LayoutConfig.MATCH_CONTENT));
+            }
+        } else {
+            boxRoot.setLayoutConfig(new ComponentContainer.LayoutConfig(1050, ComponentContainer.LayoutConfig.MATCH_CONTENT));
+        }
+    }
+
+    private void shortMsgMIUI(){
+        txtDialogTip.setHeight(ComponentContainer.LayoutConfig.MATCH_CONTENT);
+        if (btnSelectPositive != null && !isNull(cancelButton) && !isNull(otherButton)) {
+            boxRoot.setLayoutConfig(new ComponentContainer.LayoutConfig(ComponentContainer.LayoutConfig.MATCH_PARENT, 1100));
+        } else if ((btnSelectPositive != null && !isNull(cancelButton) && isNull(otherButton))
+                || (btnSelectPositive != null && isNull(cancelButton) && !isNull(otherButton))) {
+            boxRoot.setLayoutConfig(new ComponentContainer.LayoutConfig(ComponentContainer.LayoutConfig.MATCH_PARENT, 800));
+        } else if (btnSelectPositive != null && isNull(cancelButton) && isNull(otherButton)) {
+            if (DialogSettings.customDialog) {
+                boxRoot.setLayoutConfig(new ComponentContainer.LayoutConfig(ComponentContainer.LayoutConfig.MATCH_PARENT, 1100));
+            } else {
+                boxRoot.setLayoutConfig(new ComponentContainer.LayoutConfig(ComponentContainer.LayoutConfig.MATCH_PARENT, 700));
+            }
+        } else {
+            boxRoot.setLayoutConfig(new ComponentContainer.LayoutConfig(ComponentContainer.LayoutConfig.MATCH_PARENT, 700));
+        }
+    }
+
+    private void longMsgMIUI(){
+        if (scroller != null) {
+            scroller.setHeight(450);
+            txtDialogTip.setHeight(400);
+        }
+        if (btnSelectPositive != null && !isNull(cancelButton) && !isNull(otherButton)) {
+            boxRoot.setLayoutConfig(new ComponentContainer.LayoutConfig(ComponentContainer.LayoutConfig.MATCH_PARENT, 1300));
+        } else if ((btnSelectPositive != null && !isNull(cancelButton) && isNull(otherButton))
+                || (btnSelectPositive != null && isNull(cancelButton) && !isNull(otherButton))) {
+            boxRoot.setLayoutConfig(new ComponentContainer.LayoutConfig(ComponentContainer.LayoutConfig.MATCH_PARENT, 1000));
+        } else if (btnSelectPositive != null && isNull(cancelButton) && isNull(otherButton)) {
+            if (DialogSettings.customDialog) {
+                boxRoot.setLayoutConfig(new ComponentContainer.LayoutConfig(ComponentContainer.LayoutConfig.MATCH_PARENT, 1300));
+            } else {
+                boxRoot.setLayoutConfig(new ComponentContainer.LayoutConfig(ComponentContainer.LayoutConfig.MATCH_PARENT, 1000));
+            }
+        } else {
+            boxRoot.setLayoutConfig(new ComponentContainer.LayoutConfig(ComponentContainer.LayoutConfig.MATCH_PARENT, 1000));
+        }
+    }
+
+    private void styleIOS(){
+        if (DialogSettings.theme == DialogSettings.THEME.DARK) {
+            boxRoot.setBackground(ElementScatter.getInstance(boxRoot.getContext()).parse(ResourceTable.Graphic_dialog_dark_shape));
+            txtDialogTitle.setTextColor(Color.WHITE);
+            txtDialogTip.setTextColor(Color.WHITE);
+            ShapeElement shapeElement = new ShapeElement();
+            shapeElement.setRgbColor(new RgbColor(136, 136, 136)); //#888888
+            splitVertical1.setBackground(shapeElement);
+            splitVertical2.setBackground(shapeElement);
+            splitHorizontal.setBackground(shapeElement);
+            txtInput.setBackground(ElementScatter.getInstance(boxRoot.getContext()).parse(ResourceTable.Graphic_editbox_dialog_bkg_ios_dark));
+        }
+        if (!DialogSettings.customDialog) {
+            notCustomDialog();
+        } else {
+            boxRoot.setLayoutConfig(new ComponentContainer.LayoutConfig(850, 700));
+        }
+        if ((DialogSettings.selectionDialog || DialogSettings.customDialog) && (!DialogSettings.modalDialog)) {
+            scroller.setHeight(220);
+            txtDialogTip.setHeight(200);
+            boxRoot.setLayoutConfig(new ComponentContainer.LayoutConfig(850, 850));
+            DialogSettings.selectionDialog = false;
+            DialogSettings.customDialog = false;
+        }
+        if (customView != null) {
+            DialogSettings.customDialog = false;
+            DirectionalLayout.LayoutConfig lp = new DirectionalLayout.LayoutConfig(ComponentContainer.LayoutConfig.MATCH_PARENT, ComponentContainer.LayoutConfig.MATCH_CONTENT);
+            boxCustom.removeAllComponents();
+            if (customView.getComponentParent() != null && customView.getComponentParent() instanceof ComponentContainer) {
+                ((ComponentContainer) customView.getComponentParent()).removeComponent(customView);
+            }
+            boxCustom.addComponent(customView, lp);
+            if (onBindView != null) onBindView.onBind(this, customView);
+            boxCustom.setVisibility(Component.VISIBLE);
+        } else {
+            boxCustom.setVisibility(Component.HIDE);
+        }
+    }
+
+    private void styleKongzue(){
+        boxRoot.setBackground(ElementScatter.getInstance(rootLayout.getContext()).parse(ResourceTable.Graphic_dialog_dark_shape_nocorner_white));
+        if (message.length() < 20) {
+            shortMsgKongzue();
+        } else {
+            longMsgKongzue();
+        }
+        if (DialogSettings.theme == DialogSettings.THEME.DARK) {
+            boxRoot.setBackground(ElementScatter.getInstance(rootLayout.getContext()).parse(ResourceTable.Graphic_dialog_dark_shape_nocorner_black));
+            btnSelectPositive.setBackground(ElementScatter.getInstance(rootLayout.getContext()).parse(ResourceTable.Graphic_button_selectdialog_kongzhue_black));
+            btnSelectNegative.setBackground(ElementScatter.getInstance(rootLayout.getContext()).parse(ResourceTable.Graphic_button_selectdialog_kongzhue_black));
+            btnSelectOther.setBackground(ElementScatter.getInstance(rootLayout.getContext()).parse(ResourceTable.Graphic_button_selectdialog_kongzhue_black));
+            txtDialogTitle.setTextColor(Color.WHITE);
+            txtDialogTip.setTextColor(Color.WHITE);
+            btnSelectPositive.setTextColor(Color.WHITE);
+            btnSelectNegative.setTextColor(Color.WHITE);
+            btnSelectOther.setTextColor(Color.WHITE);
+            ShapeElement shapeElement = new ShapeElement();
+            shapeElement.setRgbColor(new RgbColor(0, 0, 0)); //#888888
+            splitVertical1.setBackground(shapeElement);
+            splitVertical2.setBackground(shapeElement);
+            splitHorizontal.setBackground(shapeElement);
+        }
+        if ((DialogSettings.selectionDialog || DialogSettings.customDialog) && (!DialogSettings.modalDialog)) {
+            scroller.setHeight(220);
+            txtDialogTip.setHeight(200);
+            boxRoot.setLayoutConfig(new ComponentContainer.LayoutConfig(1050, 870));
+            DialogSettings.selectionDialog = false;
+            DialogSettings.customDialog = false;
+        }
+        if (customView != null) {
+            DialogSettings.customDialog = false;
+            DirectionalLayout.LayoutConfig lp = new DirectionalLayout.LayoutConfig(ComponentContainer.LayoutConfig.MATCH_PARENT, ComponentContainer.LayoutConfig.MATCH_CONTENT);
+            boxCustom.removeAllComponents();
+            if (customView.getComponentParent() != null && customView.getComponentParent() instanceof ComponentContainer) {
+                ((ComponentContainer) customView.getComponentParent()).removeComponent(customView);
+            }
+            boxCustom.addComponent(customView, lp);
+            if (onBindView != null) onBindView.onBind(this, customView);
+            boxCustom.setVisibility(Component.VISIBLE);
+        } else {
+            boxCustom.setVisibility(Component.HIDE);
+        }
+    }
+
+    private void styleMaterial(){
+        txtDialogTitle.setTextAlignment(TextAlignment.LEFT);
+        boxRoot.setBackground(ElementScatter.getInstance(rootLayout.getContext()).parse(ResourceTable.Graphic_dialog_dark_shape_nocorner_white));
+        if (DialogSettings.theme == DialogSettings.THEME.DARK) {
+            boxRoot.setBackground(ElementScatter.getInstance(rootLayout.getContext()).parse(ResourceTable.Graphic_dialog_dark_shape_nocorner_black));
+            boxRoot.setBackground(ElementScatter.getInstance(boxRoot.getContext()).parse(ResourceTable.Graphic_dialog_dark_shape_nocorner_black));
+            txtDialogTitle.setTextColor(Color.WHITE);
+            txtDialogTip.setTextColor(Color.WHITE);
+        }
+        if (message.length() < 20) {
+            shortMsgMaterial();
+        } else {
+            longMsgMaterial();
+        }
+        if (customView != null) {
+            DialogSettings.customDialog = false;
+            DirectionalLayout.LayoutConfig lp = new DirectionalLayout.LayoutConfig(ComponentContainer.LayoutConfig.MATCH_PARENT, ComponentContainer.LayoutConfig.MATCH_CONTENT);
+            boxCustom.removeAllComponents();
+            if (customView.getComponentParent() != null && customView.getComponentParent() instanceof ComponentContainer) {
+                ((ComponentContainer) customView.getComponentParent()).removeComponent(customView);
+            }
+            boxCustom.addComponent(customView, lp);
+            if (onBindView != null) onBindView.onBind(this, customView);
+            boxCustom.setVisibility(Component.VISIBLE);
+        } else {
+            boxCustom.setVisibility(Component.HIDE);
+        }
+    }
+
+    private void styleMIUI(){
+        if (message.length() <20) {
+            shortMsgMIUI();
+        } else {
+            longMsgMIUI();
+        }
+        boxRoot.setBackground(ElementScatter.getInstance(rootLayout.getContext()).parse(ResourceTable.Graphic_dialog_light_shape));
+        txtInput.setBackground(ElementScatter.getInstance(boxRoot.getContext()).parse(ResourceTable.Graphic_editbox_dialog_bkg_miui_light));
+        btnSelectPositive.setBackground(ElementScatter.getInstance(boxRoot.getContext()).parse(ResourceTable.Graphic_button_selectdialog_miui_blue));
+        btnSelectOther.setBackground(ElementScatter.getInstance(boxRoot.getContext()).parse(ResourceTable.Graphic_button_selectdialog_miui_gray));
+        btnSelectNegative.setBackground(ElementScatter.getInstance(boxRoot.getContext()).parse(ResourceTable.Graphic_button_selectdialog_miui_gray));
+        if (DialogSettings.theme == DialogSettings.THEME.DARK) {
+            boxRoot.setBackground(ElementScatter.getInstance(boxRoot.getContext()).parse(ResourceTable.Graphic_dialog_dark_shape));
+            txtDialogTitle.setTextColor(Color.WHITE);
+            txtDialogTip.setTextColor(Color.WHITE);
+            txtInput.setBackground(ElementScatter.getInstance(boxRoot.getContext()).parse(ResourceTable.Graphic_editbox_dialog_bkg_miui_dark));
+        }
+        if (customView != null) {
+            DialogSettings.customDialog = false;
+            DirectionalLayout.LayoutConfig lp = new DirectionalLayout.LayoutConfig(ComponentContainer.LayoutConfig.MATCH_PARENT, ComponentContainer.LayoutConfig.MATCH_CONTENT);
+            boxCustom.removeAllComponents();
+            if (customView.getComponentParent() != null && customView.getComponentParent() instanceof ComponentContainer) {
+                ((ComponentContainer) customView.getComponentParent()).removeComponent(customView);
+            }
+            boxCustom.addComponent(customView, lp);
+            if (onBindView != null) onBindView.onBind(this, customView);
+            boxCustom.setVisibility(Component.VISIBLE);
+        } else {
+            boxCustom.setVisibility(Component.HIDE);
+        }
+    }
+
+    private void positiveBtnSelect(){
+        if (DialogSettings.style == DialogSettings.STYLE.STYLE_MATERIAL) {
+            btnSelectPositive.setText(okButton.toString().toUpperCase());
+        } else {
+            btnSelectPositive.setText(okButton.toString());
+        }
+        if (okButtonDrawable != null) {
+            btnSelectPositive.setBackground(okButtonDrawable);
+        }
+
+        btnSelectPositive.setClickedListener(new Component.ClickedListener() {
+            @Override
+            public void onClick(Component component) {
+                if (onOkButtonClickListener != null) {
+                    doDismiss();
+                    onOkButtonClickListener.onClick();
+                } else {
+                    doDismiss();
+                }
+            }
+        });
+    }
+
+    private void negativeBtnSelect(){
+        if (isNull(cancelButton)) {
+            btnSelectNegative.setVisibility(Component.HIDE);
+            if (DialogSettings.style == DialogSettings.STYLE.STYLE_IOS) {
+                splitVertical2.setVisibility(Component.HIDE);
+            }
+        } else {
+            if (DialogSettings.style == DialogSettings.STYLE.STYLE_MATERIAL) {
+                btnSelectNegative.setText(cancelButton.toString().toUpperCase());
+            } else {
+                btnSelectNegative.setText(cancelButton.toString());
+            }
+            if (cancelButtonDrawable != null) {
+                btnSelectNegative.setBackground(cancelButtonDrawable);
+            }
+
+            btnSelectNegative.setClickedListener(component -> {
+                doDismiss();
+            });
+        }
+    }
+
+    private void otherBtnSelect(){
+        if (isNull(otherButton)) {
+            if (DialogSettings.style == DialogSettings.STYLE.STYLE_IOS) {
+                splitVertical1.setVisibility(Component.HIDE);
+            }
+
+        } else {
+            if (DialogSettings.style == DialogSettings.STYLE.STYLE_IOS) {
+                splitVertical1.setVisibility(Component.VISIBLE);
+            }
+            btnSelectOther.setVisibility(Component.VISIBLE);
+            if (DialogSettings.style == DialogSettings.STYLE.STYLE_MATERIAL) {
+                btnSelectOther.setText(otherButton.toString().toUpperCase());
+            } else {
+                btnSelectOther.setText(otherButton.toString());
+            }
+            if (otherButtonDrawable != null) {
+                btnSelectOther.setBackground(otherButtonDrawable);
+            }
+        }
+
+        btnSelectOther.setClickedListener(new Component.ClickedListener() {
+            @Override
+            public void onClick(Component component) {
+                doDismiss();
+            }
+        });
+    }
+
+    private void boxButtonConfig(){
+        boxButton.setOrientation(buttonOrientation);
+        if (buttonOrientation == LayoutAlignment.VERTICAL_CENTER) {
+            //竖排排列的情况下
+            boxButton.removeAllComponents();
+
+            if (style == DialogSettings.STYLE.STYLE_IOS) {
+                boxButton.addComponent(btnSelectPositive);
+                boxButton.addComponent(splitVertical2);
+                boxButton.addComponent(btnSelectNegative);
+                boxButton.addComponent(splitVertical1);
+                boxButton.addComponent(btnSelectOther);
+
+                DirectionalLayout.LayoutConfig lp1 = new DirectionalLayout.LayoutConfig(DirectionalLayout.LayoutConfig.MATCH_PARENT, 1);
+                splitVertical1.setLayoutConfig(lp1);
+                splitVertical2.setLayoutConfig(lp1);
+            } else if (style == DialogSettings.STYLE.STYLE_KONGZUE) {
+                boxButton.addComponent(splitHorizontal);
+                boxButton.addComponent(btnSelectPositive);
+                boxButton.addComponent(splitVertical2);
+                boxButton.addComponent(btnSelectNegative);
+                boxButton.addComponent(splitVertical1);
+                boxButton.addComponent(btnSelectOther);
+
+                splitHorizontal.setMarginTop(10);
+                DirectionalLayout.LayoutConfig lp1 = new DirectionalLayout.LayoutConfig(DirectionalLayout.LayoutConfig.MATCH_PARENT, 1);
+                splitVertical1.setLayoutConfig(lp1);
+                splitVertical2.setLayoutConfig(lp1);
+                splitHorizontal.setLayoutConfig(lp1);
+            } else {
+                boxButton.addComponent(btnSelectPositive);
+                boxButton.addComponent(btnSelectNegative);
+                boxButton.addComponent(btnSelectOther);
+            }
+
+        }
+    }
+
+    private void btnSelect(){
+        if (btnSelectPositive != null) {
+            positiveBtnSelect();
+        }
+        if (btnSelectNegative != null) {
+            negativeBtnSelect();
+        }
+        if (btnSelectOther != null) {
+            otherBtnSelect();
+        }
+    }
+
     public void refreshView() {
-        if (txtDialogTitle != null) {
+            if (txtDialogTitle != null) {
             if (title == null) {
                 txtDialogTitle.setVisibility(Component.INVISIBLE);
             } else {
@@ -225,255 +632,16 @@ public class MessageDialog extends DialogBase {
         if (rootLayout != null) {
             switch (style) {
                 case STYLE_IOS:
-                    if (DialogSettings.theme == DialogSettings.THEME.DARK) {
-                        boxRoot.setBackground(ElementScatter.getInstance(boxRoot.getContext()).parse(ResourceTable.Graphic_dialog_dark_shape));
-                        txtDialogTitle.setTextColor(Color.WHITE);
-                        txtDialogTip.setTextColor(Color.WHITE);
-                        ShapeElement shapeElement = new ShapeElement();
-                        shapeElement.setRgbColor(new RgbColor(136, 136, 136)); //#888888
-                        splitVertical1.setBackground(shapeElement);
-                        splitVertical2.setBackground(shapeElement);
-                        splitHorizontal.setBackground(shapeElement);
-                        txtInput.setBackground(ElementScatter.getInstance(boxRoot.getContext()).parse(ResourceTable.Graphic_editbox_dialog_bkg_ios_dark));
-                    }
-                    if (!DialogSettings.customDialog) {
-                        if (message.length() < 20) {
-                            if (btnSelectPositive != null && !isNull(cancelButton) && !isNull(otherButton)) {
-                                boxRoot.setLayoutConfig(new ComponentContainer.LayoutConfig(850, 800));
-                            } else if ((btnSelectPositive != null && !isNull(cancelButton) && isNull(otherButton))
-                                    || (btnSelectPositive != null && isNull(cancelButton) && !isNull(otherButton))) {
-                                //  boxRoot.setLayoutConfig(new ComponentContainer.LayoutConfig(850, 500));
-                            } else if (btnSelectPositive != null && isNull(cancelButton) && isNull(otherButton)) {
-                                boxRoot.setLayoutConfig(new ComponentContainer.LayoutConfig(850, 400));
-                            } else {
-                                boxRoot.setLayoutConfig(new ComponentContainer.LayoutConfig(850, 400));
-                            }
-                        } else {
-                            boxRoot.setLayoutConfig(new ComponentContainer.LayoutConfig(850, ComponentContainer.LayoutConfig.MATCH_CONTENT));
-                        }
-                    } else {
-                        boxRoot.setLayoutConfig(new ComponentContainer.LayoutConfig(850, 700));
-                    }
-                    if ((DialogSettings.selectionDialog == true || DialogSettings.customDialog == true) && (DialogSettings.modalDialog == false)) {
-                        scroller.setHeight(220);
-                        txtDialogTip.setHeight(200);
-                        boxRoot.setLayoutConfig(new ComponentContainer.LayoutConfig(850, 850));
-                        DialogSettings.selectionDialog = false;
-                        DialogSettings.customDialog = false;
-                    }
-                    if (customView != null) {
-                        DialogSettings.customDialog = false;
-                        DirectionalLayout.LayoutConfig lp = new DirectionalLayout.LayoutConfig(ComponentContainer.LayoutConfig.MATCH_PARENT, ComponentContainer.LayoutConfig.MATCH_CONTENT);
-                        boxCustom.removeAllComponents();
-                        if (customView.getComponentParent() != null && customView.getComponentParent() instanceof ComponentContainer) {
-                            ((ComponentContainer) customView.getComponentParent()).removeComponent(customView);
-                        }
-                        boxCustom.addComponent(customView, lp);
-                        if (onBindView != null) onBindView.onBind(this, customView);
-                        boxCustom.setVisibility(Component.VISIBLE);
-                    } else {
-                        boxCustom.setVisibility(Component.HIDE);
-                    }
+                    styleIOS();
                     break;
                 case STYLE_KONGZUE:
-                    boxRoot.setBackground(ElementScatter.getInstance(rootLayout.getContext()).parse(ResourceTable.Graphic_dialog_dark_shape_nocorner_white));
-                    if (message.length() < 20) {
-                        if (btnSelectPositive != null && !isNull(cancelButton) && !isNull(otherButton)) {
-                            boxRoot.setLayoutConfig(new ComponentContainer.LayoutConfig(1050, 800));
-                            splitHorizontal.setVisibility(Component.VISIBLE);
-                            splitVertical1.setVisibility(Component.VISIBLE);
-                            splitVertical2.setVisibility(Component.VISIBLE);
-                            btnSelectPositive.setBackground(ElementScatter.getInstance(rootLayout.getContext()).parse(ResourceTable.Graphic_button_selectdialog_kongzhue_white));
-                        } else if ((btnSelectPositive != null && !isNull(cancelButton) && isNull(otherButton))
-                                || (btnSelectPositive != null && isNull(cancelButton) && !isNull(otherButton))) {
-                            boxRoot.setLayoutConfig(new ComponentContainer.LayoutConfig(1050, 500));
-                        } else if (btnSelectPositive != null && isNull(cancelButton) && isNull(otherButton)) {
-                            splitHorizontal.setVisibility(Component.HIDE);
-                            if (DialogSettings.customDialog) {
-                                boxRoot.setLayoutConfig(new ComponentContainer.LayoutConfig(1050, 750));
-                            } else {
-                                boxRoot.setLayoutConfig(new ComponentContainer.LayoutConfig(1050, 400));
-                            }
-                        } else {
-                            boxRoot.setLayoutConfig(new ComponentContainer.LayoutConfig(1050, 400));
-                        }
-                    } else {
-                        if (btnSelectPositive != null && !isNull(cancelButton) && !isNull(otherButton)) {
-                            boxRoot.setLayoutConfig(new ComponentContainer.LayoutConfig(1050, ComponentContainer.LayoutConfig.MATCH_CONTENT));
-                            splitHorizontal.setVisibility(Component.VISIBLE);
-                            splitVertical1.setVisibility(Component.VISIBLE);
-                            splitVertical2.setVisibility(Component.VISIBLE);
-                            btnSelectPositive.setBackground(ElementScatter.getInstance(rootLayout.getContext()).parse(ResourceTable.Graphic_button_selectdialog_kongzhue_white));
-                        } else if ((btnSelectPositive != null && !isNull(cancelButton) && isNull(otherButton))
-                                || (btnSelectPositive != null && isNull(cancelButton) && !isNull(otherButton))) {
-                            boxRoot.setLayoutConfig(new ComponentContainer.LayoutConfig(1050, ComponentContainer.LayoutConfig.MATCH_CONTENT));
-                        } else if (btnSelectPositive != null && isNull(cancelButton) && isNull(otherButton)) {
-                            splitHorizontal.setVisibility(Component.HIDE);
-                            if (DialogSettings.customDialog) {
-                                boxRoot.setLayoutConfig(new ComponentContainer.LayoutConfig(1050, 750));
-                            } else {
-                                boxRoot.setLayoutConfig(new ComponentContainer.LayoutConfig(1050, ComponentContainer.LayoutConfig.MATCH_CONTENT));
-                            }
-                        } else {
-                            boxRoot.setLayoutConfig(new ComponentContainer.LayoutConfig(1050, ComponentContainer.LayoutConfig.MATCH_CONTENT));
-                        }
-                    }
-                    if (DialogSettings.theme == DialogSettings.THEME.DARK) {
-                        boxRoot.setBackground(ElementScatter.getInstance(rootLayout.getContext()).parse(ResourceTable.Graphic_dialog_dark_shape_nocorner_black));
-                        btnSelectPositive.setBackground(ElementScatter.getInstance(rootLayout.getContext()).parse(ResourceTable.Graphic_button_selectdialog_kongzhue_black));
-                        btnSelectNegative.setBackground(ElementScatter.getInstance(rootLayout.getContext()).parse(ResourceTable.Graphic_button_selectdialog_kongzhue_black));
-                        btnSelectOther.setBackground(ElementScatter.getInstance(rootLayout.getContext()).parse(ResourceTable.Graphic_button_selectdialog_kongzhue_black));
-                        txtDialogTitle.setTextColor(Color.WHITE);
-                        txtDialogTip.setTextColor(Color.WHITE);
-                        btnSelectPositive.setTextColor(Color.WHITE);
-                        btnSelectNegative.setTextColor(Color.WHITE);
-                        btnSelectOther.setTextColor(Color.WHITE);
-                        ShapeElement shapeElement = new ShapeElement();
-                        shapeElement.setRgbColor(new RgbColor(0, 0, 0)); //#888888
-                        splitVertical1.setBackground(shapeElement);
-                        splitVertical2.setBackground(shapeElement);
-                        splitHorizontal.setBackground(shapeElement);
-                    }
-                    if ((DialogSettings.selectionDialog == true || DialogSettings.customDialog == true) && (DialogSettings.modalDialog == false)) {
-                        scroller.setHeight(220);
-                        txtDialogTip.setHeight(200);
-                        boxRoot.setLayoutConfig(new ComponentContainer.LayoutConfig(1050, 870));
-                        DialogSettings.selectionDialog = false;
-                        DialogSettings.customDialog = false;
-                    }
-                    if (customView != null) {
-                        DialogSettings.customDialog = false;
-                        DirectionalLayout.LayoutConfig lp = new DirectionalLayout.LayoutConfig(ComponentContainer.LayoutConfig.MATCH_PARENT, ComponentContainer.LayoutConfig.MATCH_CONTENT);
-                        boxCustom.removeAllComponents();
-                        if (customView.getComponentParent() != null && customView.getComponentParent() instanceof ComponentContainer) {
-                            ((ComponentContainer) customView.getComponentParent()).removeComponent(customView);
-                        }
-                        boxCustom.addComponent(customView, lp);
-                        if (onBindView != null) onBindView.onBind(this, customView);
-                        boxCustom.setVisibility(Component.VISIBLE);
-                    } else {
-                        boxCustom.setVisibility(Component.HIDE);
-                    }
+                    styleKongzue();
                     break;
                 case STYLE_MATERIAL:
-                    txtDialogTitle.setTextAlignment(TextAlignment.LEFT);
-                    boxRoot.setBackground(ElementScatter.getInstance(rootLayout.getContext()).parse(ResourceTable.Graphic_dialog_dark_shape_nocorner_white));
-                    if (DialogSettings.theme == DialogSettings.THEME.DARK) {
-                        boxRoot.setBackground(ElementScatter.getInstance(rootLayout.getContext()).parse(ResourceTable.Graphic_dialog_dark_shape_nocorner_black));
-                        boxRoot.setBackground(ElementScatter.getInstance(boxRoot.getContext()).parse(ResourceTable.Graphic_dialog_dark_shape_nocorner_black));
-                        txtDialogTitle.setTextColor(Color.WHITE);
-                        txtDialogTip.setTextColor(Color.WHITE);
-                    }
-                    if (message.length() < 20) {
-                        if (btnSelectPositive != null && !isNull(cancelButton) && !isNull(otherButton)) {
-                            boxRoot.setLayoutConfig(new ComponentContainer.LayoutConfig(1050, 500));
-                        } else if ((btnSelectPositive != null && !isNull(cancelButton) && isNull(otherButton))
-                                || (btnSelectPositive != null && isNull(cancelButton) && !isNull(otherButton))) {
-                            boxRoot.setLayoutConfig(new ComponentContainer.LayoutConfig(1050, 500));
-                        } else if (btnSelectPositive != null && isNull(cancelButton) && isNull(otherButton)) {
-                            boxButton.setAlignment(LayoutAlignment.RIGHT);
-                            btnSelectPositive.setMarginRight(80);
-                            if (DialogSettings.customDialog) {
-                                boxRoot.setLayoutConfig(new ComponentContainer.LayoutConfig(1050, 880));
-                            } else {
-                                boxRoot.setLayoutConfig(new ComponentContainer.LayoutConfig(1050, 500));
-                            }
-                        } else {
-                            boxRoot.setLayoutConfig(new ComponentContainer.LayoutConfig(1050, 500));
-                        }
-                    } else {
-                        if (btnSelectPositive != null && !isNull(cancelButton) && !isNull(otherButton)) {
-                            boxRoot.setLayoutConfig(new ComponentContainer.LayoutConfig(1050, ComponentContainer.LayoutConfig.MATCH_CONTENT));
-                        } else if ((btnSelectPositive != null && !isNull(cancelButton) && isNull(otherButton))
-                                || (btnSelectPositive != null && isNull(cancelButton) && !isNull(otherButton))) {
-                            boxRoot.setLayoutConfig(new ComponentContainer.LayoutConfig(1050, ComponentContainer.LayoutConfig.MATCH_CONTENT));
-                        } else if (btnSelectPositive != null && isNull(cancelButton) && isNull(otherButton)) {
-                            boxButton.setAlignment(LayoutAlignment.RIGHT);
-                            btnSelectPositive.setMarginRight(80);
-                            if (DialogSettings.customDialog) {
-                                boxRoot.setLayoutConfig(new ComponentContainer.LayoutConfig(1050, 880));
-                            } else {
-                                boxRoot.setLayoutConfig(new ComponentContainer.LayoutConfig(1050, ComponentContainer.LayoutConfig.MATCH_CONTENT));
-                            }
-                        } else {
-                            boxRoot.setLayoutConfig(new ComponentContainer.LayoutConfig(1050, ComponentContainer.LayoutConfig.MATCH_CONTENT));
-                        }
-                    }
-                    if (customView != null) {
-                        DialogSettings.customDialog = false;
-                        DirectionalLayout.LayoutConfig lp = new DirectionalLayout.LayoutConfig(ComponentContainer.LayoutConfig.MATCH_PARENT, ComponentContainer.LayoutConfig.MATCH_CONTENT);
-                        boxCustom.removeAllComponents();
-                        if (customView.getComponentParent() != null && customView.getComponentParent() instanceof ComponentContainer) {
-                            ((ComponentContainer) customView.getComponentParent()).removeComponent(customView);
-                        }
-                        boxCustom.addComponent(customView, lp);
-                        if (onBindView != null) onBindView.onBind(this, customView);
-                        boxCustom.setVisibility(Component.VISIBLE);
-                    } else {
-                        boxCustom.setVisibility(Component.HIDE);
-                    }
+                    styleMaterial();
                     break;
                 case STYLE_MIUI:
-                    if (message.length() <20) {
-                        txtDialogTip.setHeight(ComponentContainer.LayoutConfig.MATCH_CONTENT);
-                        if (btnSelectPositive != null && !isNull(cancelButton) && !isNull(otherButton)) {
-                            boxRoot.setLayoutConfig(new ComponentContainer.LayoutConfig(ComponentContainer.LayoutConfig.MATCH_PARENT, 1100));
-                        } else if ((btnSelectPositive != null && !isNull(cancelButton) && isNull(otherButton))
-                                || (btnSelectPositive != null && isNull(cancelButton) && !isNull(otherButton))) {
-                            boxRoot.setLayoutConfig(new ComponentContainer.LayoutConfig(ComponentContainer.LayoutConfig.MATCH_PARENT, 800));
-                        } else if (btnSelectPositive != null && isNull(cancelButton) && isNull(otherButton)) {
-                            if (DialogSettings.customDialog) {
-                                boxRoot.setLayoutConfig(new ComponentContainer.LayoutConfig(ComponentContainer.LayoutConfig.MATCH_PARENT, 1100));
-                            } else {
-                                boxRoot.setLayoutConfig(new ComponentContainer.LayoutConfig(ComponentContainer.LayoutConfig.MATCH_PARENT, 700));
-                            }
-                        } else {
-                            boxRoot.setLayoutConfig(new ComponentContainer.LayoutConfig(ComponentContainer.LayoutConfig.MATCH_PARENT, 700));
-                        }
-                    } else {
-                        if (scroller != null) {
-                            scroller.setHeight(450);
-                            txtDialogTip.setHeight(400);
-                        }
-                        if (btnSelectPositive != null && !isNull(cancelButton) && !isNull(otherButton)) {
-                            boxRoot.setLayoutConfig(new ComponentContainer.LayoutConfig(ComponentContainer.LayoutConfig.MATCH_PARENT, 1300));
-                        } else if ((btnSelectPositive != null && !isNull(cancelButton) && isNull(otherButton))
-                                || (btnSelectPositive != null && isNull(cancelButton) && !isNull(otherButton))) {
-                            boxRoot.setLayoutConfig(new ComponentContainer.LayoutConfig(ComponentContainer.LayoutConfig.MATCH_PARENT, 1000));
-                        } else if (btnSelectPositive != null && isNull(cancelButton) && isNull(otherButton)) {
-                            if (DialogSettings.customDialog) {
-                                boxRoot.setLayoutConfig(new ComponentContainer.LayoutConfig(ComponentContainer.LayoutConfig.MATCH_PARENT, 1300));
-                            } else {
-                                boxRoot.setLayoutConfig(new ComponentContainer.LayoutConfig(ComponentContainer.LayoutConfig.MATCH_PARENT, 1000));
-                            }
-                        } else {
-                            boxRoot.setLayoutConfig(new ComponentContainer.LayoutConfig(ComponentContainer.LayoutConfig.MATCH_PARENT, 1000));
-                        }
-                    }
-                    boxRoot.setBackground(ElementScatter.getInstance(rootLayout.getContext()).parse(ResourceTable.Graphic_dialog_light_shape));
-                    txtInput.setBackground(ElementScatter.getInstance(boxRoot.getContext()).parse(ResourceTable.Graphic_editbox_dialog_bkg_miui_light));
-                    btnSelectPositive.setBackground(ElementScatter.getInstance(boxRoot.getContext()).parse(ResourceTable.Graphic_button_selectdialog_miui_blue));
-                    btnSelectOther.setBackground(ElementScatter.getInstance(boxRoot.getContext()).parse(ResourceTable.Graphic_button_selectdialog_miui_gray));
-                    btnSelectNegative.setBackground(ElementScatter.getInstance(boxRoot.getContext()).parse(ResourceTable.Graphic_button_selectdialog_miui_gray));
-                    if (DialogSettings.theme == DialogSettings.THEME.DARK) {
-                        boxRoot.setBackground(ElementScatter.getInstance(boxRoot.getContext()).parse(ResourceTable.Graphic_dialog_dark_shape));
-                        txtDialogTitle.setTextColor(Color.WHITE);
-                        txtDialogTip.setTextColor(Color.WHITE);
-                        txtInput.setBackground(ElementScatter.getInstance(boxRoot.getContext()).parse(ResourceTable.Graphic_editbox_dialog_bkg_miui_dark));
-                    }
-                    if (customView != null) {
-                        DialogSettings.customDialog = false;
-                        DirectionalLayout.LayoutConfig lp = new DirectionalLayout.LayoutConfig(ComponentContainer.LayoutConfig.MATCH_PARENT, ComponentContainer.LayoutConfig.MATCH_CONTENT);
-                        boxCustom.removeAllComponents();
-                        if (customView.getComponentParent() != null && customView.getComponentParent() instanceof ComponentContainer) {
-                            ((ComponentContainer) customView.getComponentParent()).removeComponent(customView);
-                        }
-                        boxCustom.addComponent(customView, lp);
-                        if (onBindView != null) onBindView.onBind(this, customView);
-                        boxCustom.setVisibility(Component.VISIBLE);
-                    } else {
-                        boxCustom.setVisibility(Component.HIDE);
-                    }
+                    styleMIUI();
                     break;
                 default:
                     break;
@@ -481,114 +649,10 @@ public class MessageDialog extends DialogBase {
         }
 
         if (boxButton != null && (DialogSettings.style != DialogSettings.STYLE.STYLE_MATERIAL)) {
-            boxButton.setOrientation(buttonOrientation);
-            if (buttonOrientation == LayoutAlignment.VERTICAL_CENTER) {
-                //竖排排列的情况下
-                boxButton.removeAllComponents();
-
-                if (style == DialogSettings.STYLE.STYLE_IOS) {
-                    boxButton.addComponent(btnSelectPositive);
-                    boxButton.addComponent(splitVertical2);
-                    boxButton.addComponent(btnSelectNegative);
-                    boxButton.addComponent(splitVertical1);
-                    boxButton.addComponent(btnSelectOther);
-
-                    DirectionalLayout.LayoutConfig lp1 = new DirectionalLayout.LayoutConfig(DirectionalLayout.LayoutConfig.MATCH_PARENT, 1);
-                    splitVertical1.setLayoutConfig(lp1);
-                    splitVertical2.setLayoutConfig(lp1);
-                } else if (style == DialogSettings.STYLE.STYLE_KONGZUE) {
-                    boxButton.addComponent(splitHorizontal);
-                    boxButton.addComponent(btnSelectPositive);
-                    boxButton.addComponent(splitVertical2);
-                    boxButton.addComponent(btnSelectNegative);
-                    boxButton.addComponent(splitVertical1);
-                    boxButton.addComponent(btnSelectOther);
-
-                    splitHorizontal.setMarginTop(10);
-                    DirectionalLayout.LayoutConfig lp1 = new DirectionalLayout.LayoutConfig(DirectionalLayout.LayoutConfig.MATCH_PARENT, 1);
-                    splitVertical1.setLayoutConfig(lp1);
-                    splitVertical2.setLayoutConfig(lp1);
-                    splitHorizontal.setLayoutConfig(lp1);
-                } else {
-                    boxButton.addComponent(btnSelectPositive);
-                    boxButton.addComponent(btnSelectNegative);
-                    boxButton.addComponent(btnSelectOther);
-                }
-
-            }
+            boxButtonConfig();
         }
 
-        if (btnSelectPositive != null) {
-            if (DialogSettings.style == DialogSettings.STYLE.STYLE_MATERIAL) {
-                btnSelectPositive.setText(okButton.toString().toUpperCase());
-            } else {
-                btnSelectPositive.setText(okButton.toString());
-            }
-            if (okButtonDrawable != null) {
-                btnSelectPositive.setBackground(okButtonDrawable);
-            }
-
-            btnSelectPositive.setClickedListener(new Component.ClickedListener() {
-                @Override
-                public void onClick(Component component) {
-                    if (onOkButtonClickListener != null) {
-                        doDismiss();
-                        onOkButtonClickListener.onClick();
-                    } else {
-                        doDismiss();
-                    }
-                }
-            });
-        }
-        if (btnSelectNegative != null) {
-            if (isNull(cancelButton)) {
-                btnSelectNegative.setVisibility(Component.HIDE);
-                if (DialogSettings.style == DialogSettings.STYLE.STYLE_IOS) {
-                    splitVertical2.setVisibility(Component.HIDE);
-                }
-            } else {
-                if (DialogSettings.style == DialogSettings.STYLE.STYLE_MATERIAL) {
-                    btnSelectNegative.setText(cancelButton.toString().toUpperCase());
-                } else {
-                    btnSelectNegative.setText(cancelButton.toString());
-                }
-                if (cancelButtonDrawable != null) {
-                    btnSelectNegative.setBackground(cancelButtonDrawable);
-                }
-
-                btnSelectNegative.setClickedListener(component -> {
-                    doDismiss();
-                });
-            }
-        }
-        if (btnSelectOther != null) {
-            if (isNull(otherButton)) {
-                if (DialogSettings.style == DialogSettings.STYLE.STYLE_IOS) {
-                    splitVertical1.setVisibility(Component.HIDE);
-                }
-
-            } else {
-                if (DialogSettings.style == DialogSettings.STYLE.STYLE_IOS) {
-                    splitVertical1.setVisibility(Component.VISIBLE);
-                }
-                btnSelectOther.setVisibility(Component.VISIBLE);
-                if (DialogSettings.style == DialogSettings.STYLE.STYLE_MATERIAL) {
-                    btnSelectOther.setText(otherButton.toString().toUpperCase());
-                } else {
-                    btnSelectOther.setText(otherButton.toString());
-                }
-                if (otherButtonDrawable != null) {
-                    btnSelectOther.setBackground(otherButtonDrawable);
-                }
-            }
-
-            btnSelectOther.setClickedListener(new Component.ClickedListener() {
-                @Override
-                public void onClick(Component component) {
-                    doDismiss();
-                }
-            });
-        }
+        btnSelect();
     }
 
     public MessageDialog setButtonOrientation(int buttonOrientation) {
@@ -804,7 +868,7 @@ public class MessageDialog extends DialogBase {
         return onDismissListener == null ? new OnDismissListener() {
             @Override
             public void onDismiss() {
-
+                //TODO
             }
         } : onDismissListener;
     }
@@ -819,7 +883,7 @@ public class MessageDialog extends DialogBase {
         return onShowListener == null ? new OnShowListener() {
             @Override
             public void onShow(DialogBase dialog) {
-
+                //TODO
             }
         } : onShowListener;
     }

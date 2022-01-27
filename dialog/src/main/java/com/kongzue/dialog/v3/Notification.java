@@ -416,17 +416,48 @@ public class Notification {
         ktoast = new kToast(durationTime, onDismissListener, dip2px(80)).show(context.get(), rootView);
     }
 
+    private void notIOSMIUI(){
+        if (btnNotic != null) {
+            if (backgroundColor == 0)
+                if (style == DialogSettings.STYLE.STYLE_KONGZUE) {
+                    backgroundColor = UiUtil.getColor(context.get(), ResourceTable.Color_notificationNormal);
+                } else {
+                    backgroundColor = UiUtil.getColor(context.get(), ResourceTable.Color_white);
+                }
+            btnNotic.setBackground(UiUtil.getShapeElement(RECTANGLE, backgroundColor, 0.0f));
+        }
+    }
+
+    private void boxCustomConfig(){
+        if (customView != null) {
+            boxCustom.removeAllComponents();
+            boxCustom.setVisibility(Component.VISIBLE);
+            if (customView.getComponentParent() != null && customView.getComponentParent() instanceof ComponentContainer) {
+                customView.getComponentParent().removeComponent(customView);
+            }
+            boxCustom.addComponent(customView);
+            rootView.setDispatchTouchEvent(false);
+            if (onBindView != null) onBindView.onBind(this, customView);
+        } else {
+            boxCustom.setVisibility(Component.HIDE);
+            rootView.setDispatchTouchEvent(true);
+        }
+    }
+
+    private void setImgIcon(){
+        if (iconResId == 0) {
+            imgIcon.setVisibility(Component.HIDE);
+        } else {
+            imgIcon.setVisibility(Component.VISIBLE);
+            if (iconResId != 0) {
+                imgIcon.setForeground(getPixelElementByResId(context.get(), iconResId));
+            }
+        }
+    }
+
     private void refreshView() {
         if (style != DialogSettings.STYLE.STYLE_IOS && style != DialogSettings.STYLE.STYLE_MIUI) {
-            if (btnNotic != null) {
-                if (backgroundColor == 0)
-                    if (style == DialogSettings.STYLE.STYLE_KONGZUE) {
-                        backgroundColor = UiUtil.getColor(context.get(), ResourceTable.Color_notificationNormal);
-                    } else {
-                        backgroundColor = UiUtil.getColor(context.get(), ResourceTable.Color_white);
-                    }
-                btnNotic.setBackground(UiUtil.getShapeElement(RECTANGLE, backgroundColor, 0.0f));
-            }
+            notIOSMIUI();
         }
         if (txtTitle != null) {
             if (isNull(title)) {
@@ -445,29 +476,10 @@ public class Notification {
             }
         }
         if (imgIcon != null) {
-            if (iconResId == 0) {
-                imgIcon.setVisibility(Component.HIDE);
-            } else {
-                imgIcon.setVisibility(Component.VISIBLE);
-                if (iconResId != 0) {
-                    imgIcon.setForeground(getPixelElementByResId(context.get(), iconResId));
-                }
-            }
+            setImgIcon();
         }
         if (boxCustom != null) {
-            if (customView != null) {
-                boxCustom.removeAllComponents();
-                boxCustom.setVisibility(Component.VISIBLE);
-                if (customView.getComponentParent() != null && customView.getComponentParent() instanceof ComponentContainer) {
-                    customView.getComponentParent().removeComponent(customView);
-                }
-                boxCustom.addComponent(customView);
-                rootView.setDispatchTouchEvent(false);
-                if (onBindView != null) onBindView.onBind(this, customView);
-            } else {
-                boxCustom.setVisibility(Component.HIDE);
-                rootView.setDispatchTouchEvent(true);
-            }
+            boxCustomConfig();
         }
 
         useTextInfo(txtTitle, titleTextInfo);

@@ -16,7 +16,6 @@
 package com.kongzue.dialog.util.view;
 
 import ohos.agp.components.AttrSet;
-import ohos.agp.components.Component;
 import ohos.agp.components.Image;
 import ohos.agp.components.element.Element;
 import ohos.agp.components.element.PixelMapElement;
@@ -47,7 +46,7 @@ public class IOSItemImageView extends Image {
     private float mDrawableW;
     private float mDrawableH;
 
-    private static final String ATTRIBUTE_CornerRadius = "aiv_CornerRadius";
+    private static final String ATTRIBUTE_CORNER_RADIUS = "aiv_CornerRadius";
 
     public IOSItemImageView(Context context) {
         super(context);
@@ -87,9 +86,9 @@ public class IOSItemImageView extends Image {
         if (attrs == null) {
             return;
         }
-        boolean isPresentCornerRadius = attrs.getAttr(ATTRIBUTE_CornerRadius).isPresent();
+        boolean isPresentCornerRadius = attrs.getAttr(ATTRIBUTE_CORNER_RADIUS).isPresent();
         if (isPresentCornerRadius) {
-            mCornerRadius = dp2px(getContext(), attrs.getAttr(ATTRIBUTE_CornerRadius).get().getIntegerValue());
+            mCornerRadius = dp2px(getContext(), attrs.getAttr(ATTRIBUTE_CORNER_RADIUS).get().getIntegerValue());
         } else {
             mCornerRadius = dp2px(getContext(), DEFAULT_CORNER_RADIUS_DP);
         }

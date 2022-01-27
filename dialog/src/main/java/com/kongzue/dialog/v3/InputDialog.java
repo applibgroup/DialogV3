@@ -171,50 +171,7 @@ public class InputDialog extends MessageDialog {
 
     }
 
-    @Override
-    public void refreshView() {
-        super.refreshView();
-
-        if (boxInput != null) {
-            boxInput.setMaxHeight(dip2px(100));
-        }
-        if (btnSelectPositive != null) {
-            btnSelectPositive.setClickedListener(component -> {
-                hideInputKeyboard();
-                if (onOkButtonClickListener != null) {
-                    if (!onOkButtonClickListener.onClick(getInputText())) {
-                        doDismiss();
-                    }
-                } else {
-                    doDismiss();
-                }
-            });
-        }
-        if (btnSelectNegative != null) {
-            btnSelectNegative.setClickedListener(component -> {
-                hideInputKeyboard();
-                hideInputKeyboard();
-                if (onCancelButtonClickListener != null) {
-                    if (!onCancelButtonClickListener.onClick(getInputText().toString())) {
-                        doDismiss();
-                    }
-                } else {
-                    doDismiss();
-                }
-            });
-        }
-        if (btnSelectOther != null) {
-            btnSelectOther.setClickedListener(component -> {
-                hideInputKeyboard();
-                if (onOtherButtonClickListener != null) {
-                    if (!onOtherButtonClickListener.onClick(getInputText().toString())) {
-                        doDismiss();
-                    }
-                } else {
-                    doDismiss();
-                }
-            });
-        }
+    private void inpuTextNotNull(){
         if (txtInput != null) {
             if (txtInput != null) {
                 EventHandler handler = new EventHandler(EventRunner.getMainEventRunner());
@@ -230,7 +187,158 @@ public class InputDialog extends MessageDialog {
                 }, 100);
             }
         }
+    }
+
+    private void positiveBtnSelect(){
+        btnSelectPositive.setClickedListener(component -> {
+            hideInputKeyboard();
+            if (onOkButtonClickListener != null) {
+                if (!onOkButtonClickListener.onClick(getInputText())) {
+                    doDismiss();
+                }
+            } else {
+                doDismiss();
+            }
+        });
+    }
+
+    private void negativeBtnSelect(){
+        btnSelectNegative.setClickedListener(component -> {
+            hideInputKeyboard();
+            hideInputKeyboard();
+            if (onCancelButtonClickListener != null) {
+                if (!onCancelButtonClickListener.onClick(getInputText().toString())) {
+                    doDismiss();
+                }
+            } else {
+                doDismiss();
+            }
+        });
+    }
+
+    private void otherBtnSelect(){
+        btnSelectOther.setClickedListener(component -> {
+            hideInputKeyboard();
+            if (onOtherButtonClickListener != null) {
+                if (!onOtherButtonClickListener.onClick(getInputText().toString())) {
+                    doDismiss();
+                }
+            } else {
+                doDismiss();
+            }
+        });
+    }
+
+    @Override
+    public void refreshView() {
+        super.refreshView();
+
+
+        if (boxInput != null) {
+            boxInput.setMaxHeight(dip2px(100));
+        }
+        if (btnSelectPositive != null) {
+            positiveBtnSelect();
+        }
+        if (btnSelectNegative != null) {
+            negativeBtnSelect();
+        }
+        if (btnSelectOther != null) {
+            otherBtnSelect();
+        }
+        inpuTextNotNull();
         refreshComponents();
+    }
+
+    private void styleIOS(){
+        ShapeElement shapeElement = new ShapeElement();
+        shapeElement.setRgbColor(new RgbColor(224, 224, 224));
+        splitVertical1.setBackground(shapeElement);
+        splitVertical2.setBackground(shapeElement);
+        splitVertical1.setWidth(1);
+        splitVertical2.setWidth(1);
+        if (DialogSettings.theme == DialogSettings.THEME.DARK) {
+            shapeElement.setRgbColor(new RgbColor(136, 136, 136));
+            splitVertical1.setBackground(shapeElement);
+            splitVertical2.setBackground(shapeElement);
+            txtInput.setTextColor(Color.WHITE);
+        }
+        if (customView != null) {
+            DialogSettings.customInputDialog = false;
+        }
+    }
+
+    private void styleKongzue(){
+        if (DialogSettings.customInputDialog){
+            boxRoot.setLayoutConfig(new ComponentContainer.LayoutConfig(1050, 920));
+        } else {
+            boxRoot.setLayoutConfig(new ComponentContainer.LayoutConfig(1050, 550));
+        }
+        ShapeElement shapeElementdivider = new ShapeElement();
+        shapeElementdivider.setRgbColor(new RgbColor(224, 224, 224));
+        splitVertical1.setBackground(shapeElementdivider);
+        splitVertical2.setBackground(shapeElementdivider);
+        splitVertical1.setWidth(1);
+        splitVertical1.setVisibility(Component.VISIBLE);
+        splitVertical2.setVisibility(Component.VISIBLE);
+        splitVertical2.setWidth(1);
+        if (DialogSettings.theme == DialogSettings.THEME.DARK) {
+            shapeElementdivider.setRgbColor(new RgbColor(40, 40, 40));
+            splitVertical1.setBackground(shapeElementdivider);
+            splitVertical2.setBackground(shapeElementdivider);
+            txtInput.setTextColor(Color.WHITE);
+        }
+        if (customView != null) {
+            DialogSettings.customInputDialog = false;
+        }
+    }
+
+    private void styleMaterial(){
+        if (DialogSettings.customInputDialog){
+            boxRoot.setLayoutConfig(new ComponentContainer.LayoutConfig(1050, 1050));
+        } else {
+            boxRoot.setLayoutConfig(new ComponentContainer.LayoutConfig(1050, 640));
+        }
+        ShapeElement shapeElementInput = new ShapeElement();
+        shapeElementInput.setShape(ShapeElement.LINE);
+        shapeElementInput.setStroke(5, new RgbColor(77, 77, 255));
+        txtInput.setBasement(shapeElementInput);
+        boxInput.setPaddingTop(40);
+        boxButton.setAlignment(LayoutAlignment.RIGHT);
+        boxButton.setPaddingRight(100);
+        if (DialogSettings.theme == DialogSettings.THEME.DARK) {
+            txtInput.setTextColor(Color.WHITE);
+        }
+        if (customView != null) {
+            DialogSettings.customInputDialog = false;
+        }
+    }
+
+    private void styleMIUI(){
+        if (DialogSettings.customInputDialog){
+            boxRoot.setLayoutConfig(new ComponentContainer.LayoutConfig(ComponentContainer.LayoutConfig.MATCH_PARENT, 1450));
+        } else {
+            boxRoot.setLayoutConfig(new ComponentContainer.LayoutConfig(ComponentContainer.LayoutConfig.MATCH_PARENT, 1100));
+        }
+        txtInput.setPaddingTop(40);
+        txtInput.setTextAlignment(TextAlignment.VERTICAL_CENTER);
+        txtInput.setTextSize(50);
+        btnSelectPositive.setMarginTop(80);
+        btnSelectPositive.setTextColor(Color.WHITE);
+        btnSelectNegative.setTextColor(Color.BLACK);
+        btnSelectNegative.setMarginTop(80);
+        btnSelectOther.setMarginTop(80);
+        btnSelectNegative.setMarginLeft(40);
+        btnSelectPositive.setMarginLeft(40);
+        splitHorizontal.setVisibility(Component.HIDE);
+        splitVertical1.setVisibility(Component.HIDE);
+        splitVertical2.setVisibility(Component.HIDE);
+        if (DialogSettings.theme == DialogSettings.THEME.DARK) {
+            txtInput.setTextColor(Color.WHITE);
+        }
+        if (customView != null) {
+            DialogSettings.customInputDialog = false;
+        }
     }
 
     private void refreshComponents() {
@@ -256,91 +364,16 @@ public class InputDialog extends MessageDialog {
         if (rootLayout != null) {
             switch (style) {
                 case STYLE_IOS:
-                    ShapeElement shapeElement = new ShapeElement();
-                    shapeElement.setRgbColor(new RgbColor(224, 224, 224));
-                    splitVertical1.setBackground(shapeElement);
-                    splitVertical2.setBackground(shapeElement);
-                    splitVertical1.setWidth(1);
-                    splitVertical2.setWidth(1);
-                    if (DialogSettings.theme == DialogSettings.THEME.DARK) {
-                        shapeElement.setRgbColor(new RgbColor(136, 136, 136));
-                        splitVertical1.setBackground(shapeElement);
-                        splitVertical2.setBackground(shapeElement);
-                        txtInput.setTextColor(Color.WHITE);
-                    }
-                    if (customView != null) {
-                        DialogSettings.customInputDialog = false;
-                    }
+                    styleIOS();
                     break;
                 case STYLE_KONGZUE:
-                    if (DialogSettings.customInputDialog){
-                        boxRoot.setLayoutConfig(new ComponentContainer.LayoutConfig(1050, 920));
-                    } else {
-                        boxRoot.setLayoutConfig(new ComponentContainer.LayoutConfig(1050, 550));
-                    }
-                    ShapeElement shapeElementdivider = new ShapeElement();
-                    shapeElementdivider.setRgbColor(new RgbColor(224, 224, 224));
-                    splitVertical1.setBackground(shapeElementdivider);
-                    splitVertical2.setBackground(shapeElementdivider);
-                    splitVertical1.setWidth(1);
-                    splitVertical1.setVisibility(Component.VISIBLE);
-                    splitVertical2.setVisibility(Component.VISIBLE);
-                    splitVertical2.setWidth(1);
-                    if (DialogSettings.theme == DialogSettings.THEME.DARK) {
-                        shapeElementdivider.setRgbColor(new RgbColor(40, 40, 40));
-                        splitVertical1.setBackground(shapeElementdivider);
-                        splitVertical2.setBackground(shapeElementdivider);
-                        txtInput.setTextColor(Color.WHITE);
-                    }
-                    if (customView != null) {
-                        DialogSettings.customInputDialog = false;
-                    }
+                    styleKongzue();
                     break;
                 case STYLE_MATERIAL:
-                    if (DialogSettings.customInputDialog){
-                        boxRoot.setLayoutConfig(new ComponentContainer.LayoutConfig(1050, 1050));
-                    } else {
-                        boxRoot.setLayoutConfig(new ComponentContainer.LayoutConfig(1050, 640));
-                    }
-                    ShapeElement shapeElementInput = new ShapeElement();
-                    shapeElementInput.setShape(ShapeElement.LINE);
-                    shapeElementInput.setStroke(5, new RgbColor(77, 77, 255));
-                    txtInput.setBasement(shapeElementInput);
-                    boxInput.setPaddingTop(40);
-                    boxButton.setAlignment(LayoutAlignment.RIGHT);
-                    boxButton.setPaddingRight(100);
-                    if (DialogSettings.theme == DialogSettings.THEME.DARK) {
-                        txtInput.setTextColor(Color.WHITE);
-                    }
-                    if (customView != null) {
-                        DialogSettings.customInputDialog = false;
-                    }
+                    styleMaterial();
                     break;
                 case STYLE_MIUI:
-                    if (DialogSettings.customInputDialog){
-                        boxRoot.setLayoutConfig(new ComponentContainer.LayoutConfig(ComponentContainer.LayoutConfig.MATCH_PARENT, 1450));
-                    } else {
-                        boxRoot.setLayoutConfig(new ComponentContainer.LayoutConfig(ComponentContainer.LayoutConfig.MATCH_PARENT, 1100));
-                    }
-                    txtInput.setPaddingTop(40);
-                    txtInput.setTextAlignment(TextAlignment.VERTICAL_CENTER);
-                    txtInput.setTextSize(50);
-                    btnSelectPositive.setMarginTop(80);
-                    btnSelectPositive.setTextColor(Color.WHITE);
-                    btnSelectNegative.setTextColor(Color.BLACK);
-                    btnSelectNegative.setMarginTop(80);
-                    btnSelectOther.setMarginTop(80);
-                    btnSelectNegative.setMarginLeft(40);
-                    btnSelectPositive.setMarginLeft(40);
-                    splitHorizontal.setVisibility(Component.HIDE);
-                    splitVertical1.setVisibility(Component.HIDE);
-                    splitVertical2.setVisibility(Component.HIDE);
-                    if (DialogSettings.theme == DialogSettings.THEME.DARK) {
-                        txtInput.setTextColor(Color.WHITE);
-                    }
-                    if (customView != null) {
-                        DialogSettings.customInputDialog = false;
-                    }
+                    styleMIUI();
                     break;
                 default:
                     break;
@@ -602,7 +635,7 @@ public class InputDialog extends MessageDialog {
         return onDismissListener == null ? new OnDismissListener() {
             @Override
             public void onDismiss() {
-
+            //TODO
             }
         } : onDismissListener;
     }
@@ -616,7 +649,7 @@ public class InputDialog extends MessageDialog {
         return onShowListener == null ? new OnShowListener() {
             @Override
             public void onShow(DialogBase dialog) {
-
+                //TODO
             }
         } : onShowListener;
     }

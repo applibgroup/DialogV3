@@ -237,86 +237,142 @@ public class BottomMenu extends DialogBase {
 
         refreshView();
     }
+    private void textNullCheck(){
 
-    @Override
-    public void refreshView() {
         if (cancelButtonTextInfo == null) cancelButtonTextInfo = menuTextInfo;
         if (menuTitleTextInfo == null) menuTitleTextInfo = menuTitleInfo;
         if (menuTextInfo == null) menuTextInfo = DialogSettings.menuTextInfo;
         if (cancelButtonText == null) cancelButtonText = "cancel";
+    }
 
+    private void styleIOS(){
         int bkgResId = 0;
+        if (theme == DialogSettings.THEME.LIGHT) {
+            bkgResId = ResourceTable.Graphic_rect_menu_bkg_ios;
+            if (DialogSettings.customDialog == true || DialogSettings.bottomMenuTitle == true) {
+                ShapeElement pathItemBackgrouond = new ShapeElement();
+                pathItemBackgrouond.setShape(ShapeElement.RECTANGLE);
+                pathItemBackgrouond.setRgbColor(new RgbColor(244, 245, 246));
+                pathItemBackgrouond.setCornerRadiiArray(new float[]{0, 0, 0, 0, 50, 50, 50, 50});
+                listMenu.setBackground(pathItemBackgrouond);
+            } else {
+                listMenu.setBackground(new ShapeElement(context.get(), bkgResId));
+            }
+        } else {
+            bkgResId = ResourceTable.Graphic_rect_menu_bkg_ios_dark;
+            if (DialogSettings.customDialog == true || DialogSettings.bottomMenuTitle == true) {
+                ShapeElement pathItemBackgrouond = new ShapeElement();
+                pathItemBackgrouond.setShape(ShapeElement.RECTANGLE);
+                pathItemBackgrouond.setRgbColor(new RgbColor(38, 38, 38));
+                pathItemBackgrouond.setCornerRadiiArray(new float[]{0, 0, 0, 0, 50, 50, 50, 50});
+                listMenu.setBackground(pathItemBackgrouond);
+            } else {
+                listMenu.setBackground(new ShapeElement(context.get(), bkgResId));
+            }
+        }
+        boxCancel.setBackground(new ShapeElement(context.get(), bkgResId));
+        boxRoot.setLayoutConfig(new ComponentContainer.LayoutConfig(ComponentContainer.LayoutConfig.MATCH_PARENT, ComponentContainer.LayoutConfig.MATCH_CONTENT));
+    }
+
+    private void styleMaterial(){
+        boxCancel.setVisibility(Component.HIDE);
+        boxBody.setVisibility(Component.VISIBLE);
+        if (theme == DialogSettings.THEME.LIGHT) {
+            ShapeElement pathItemBackgrouond = new ShapeElement();
+            pathItemBackgrouond.setShape(ShapeElement.RECTANGLE);
+            pathItemBackgrouond.setRgbColor(new RgbColor(244, 245, 246));
+            pathItemBackgrouond.setCornerRadiiArray(new float[]{50, 50, 50, 50, 0, 0, 0, 0});
+            boxBody.setBackground(pathItemBackgrouond);
+        } else {
+            ShapeElement pathItemBackgrouond = new ShapeElement();
+            pathItemBackgrouond.setShape(ShapeElement.RECTANGLE);
+            pathItemBackgrouond.setRgbColor(new RgbColor(38, 38, 38));
+            pathItemBackgrouond.setCornerRadiiArray(new float[]{50, 50, 50, 50, 0, 0, 0, 0});
+            boxBody.setBackground(pathItemBackgrouond);
+        }
+        boxRoot.setLayoutConfig(new ComponentContainer.LayoutConfig(ComponentContainer.LayoutConfig.MATCH_PARENT, ComponentContainer.LayoutConfig.MATCH_CONTENT));
+    }
+
+    private void styleKongzue(){
+        if (theme == DialogSettings.THEME.LIGHT) {
+            ShapeElement pathItemBackgrouond = new ShapeElement();
+            pathItemBackgrouond.setShape(ShapeElement.RECTANGLE);
+            pathItemBackgrouond.setRgbColor(new RgbColor(241, 242, 244));
+            //    pathItemBackgrouond.setCornerRadiiArray(new float[]{50, 50, 50, 50, 0, 0, 0, 0});
+            boxRoot.setBackground(pathItemBackgrouond);
+
+        } else {
+            ShapeElement pathItemBackgrouond = new ShapeElement();
+            pathItemBackgrouond.setShape(ShapeElement.RECTANGLE);
+            pathItemBackgrouond.setRgbColor(new RgbColor(38, 38, 38));
+            //   pathItemBackgrouond.setCornerRadiiArray(new float[]{50, 50, 50, 50, 0, 0, 0, 0});
+            boxRoot.setBackground(pathItemBackgrouond);
+            boxBody.setBackground(pathItemBackgrouond);
+            listMenu.setBackground(pathItemBackgrouond);
+            btnCancel.setBackground(pathItemBackgrouond);
+        }
+        boxRoot.setLayoutConfig(new ComponentContainer.LayoutConfig(ComponentContainer.LayoutConfig.MATCH_PARENT, ComponentContainer.LayoutConfig.MATCH_CONTENT));
+    }
+
+    private void styleSwitch(){
+
         switch (style) {
             case STYLE_IOS:
-                if (theme == DialogSettings.THEME.LIGHT) {
-                    bkgResId = ResourceTable.Graphic_rect_menu_bkg_ios;
-                    if (DialogSettings.customDialog == true || DialogSettings.bottomMenuTitle == true) {
-                        ShapeElement pathItemBackgrouond = new ShapeElement();
-                        pathItemBackgrouond.setShape(ShapeElement.RECTANGLE);
-                        pathItemBackgrouond.setRgbColor(new RgbColor(244, 245, 246));
-                        pathItemBackgrouond.setCornerRadiiArray(new float[]{0, 0, 0, 0, 50, 50, 50, 50});
-                        listMenu.setBackground(pathItemBackgrouond);
-                    } else {
-                        listMenu.setBackground(new ShapeElement(context.get(), bkgResId));
-                    }
-                } else {
-                    bkgResId = ResourceTable.Graphic_rect_menu_bkg_ios_dark;
-                    if (DialogSettings.customDialog == true || DialogSettings.bottomMenuTitle == true) {
-                        ShapeElement pathItemBackgrouond = new ShapeElement();
-                        pathItemBackgrouond.setShape(ShapeElement.RECTANGLE);
-                        pathItemBackgrouond.setRgbColor(new RgbColor(38, 38, 38));
-                        pathItemBackgrouond.setCornerRadiiArray(new float[]{0, 0, 0, 0, 50, 50, 50, 50});
-                        listMenu.setBackground(pathItemBackgrouond);
-                    } else {
-                        listMenu.setBackground(new ShapeElement(context.get(), bkgResId));
-                    }
-                }
-
-                boxCancel.setBackground(new ShapeElement(context.get(), bkgResId));
-                boxRoot.setLayoutConfig(new ComponentContainer.LayoutConfig(ComponentContainer.LayoutConfig.MATCH_PARENT, ComponentContainer.LayoutConfig.MATCH_CONTENT));
+                styleIOS();
                 break;
             case STYLE_MATERIAL:
-                boxCancel.setVisibility(Component.HIDE);
-                boxBody.setVisibility(Component.VISIBLE);
-                if (theme == DialogSettings.THEME.LIGHT) {
-                    ShapeElement pathItemBackgrouond = new ShapeElement();
-                    pathItemBackgrouond.setShape(ShapeElement.RECTANGLE);
-                    pathItemBackgrouond.setRgbColor(new RgbColor(244, 245, 246));
-                    pathItemBackgrouond.setCornerRadiiArray(new float[]{50, 50, 50, 50, 0, 0, 0, 0});
-                    boxBody.setBackground(pathItemBackgrouond);
-                } else {
-                    ShapeElement pathItemBackgrouond = new ShapeElement();
-                    pathItemBackgrouond.setShape(ShapeElement.RECTANGLE);
-                    pathItemBackgrouond.setRgbColor(new RgbColor(38, 38, 38));
-                    pathItemBackgrouond.setCornerRadiiArray(new float[]{50, 50, 50, 50, 0, 0, 0, 0});
-                    boxBody.setBackground(pathItemBackgrouond);
-                }
-                boxRoot.setLayoutConfig(new ComponentContainer.LayoutConfig(ComponentContainer.LayoutConfig.MATCH_PARENT, ComponentContainer.LayoutConfig.MATCH_CONTENT));
+                styleMaterial();
                 break;
             case STYLE_KONGZUE:
-                if (theme == DialogSettings.THEME.LIGHT) {
-                    ShapeElement pathItemBackgrouond = new ShapeElement();
-                    pathItemBackgrouond.setShape(ShapeElement.RECTANGLE);
-                    pathItemBackgrouond.setRgbColor(new RgbColor(241, 242, 244));
-                    //    pathItemBackgrouond.setCornerRadiiArray(new float[]{50, 50, 50, 50, 0, 0, 0, 0});
-                    boxRoot.setBackground(pathItemBackgrouond);
-
-                } else {
-                    ShapeElement pathItemBackgrouond = new ShapeElement();
-                    pathItemBackgrouond.setShape(ShapeElement.RECTANGLE);
-                    pathItemBackgrouond.setRgbColor(new RgbColor(38, 38, 38));
-                    //   pathItemBackgrouond.setCornerRadiiArray(new float[]{50, 50, 50, 50, 0, 0, 0, 0});
-                    boxRoot.setBackground(pathItemBackgrouond);
-                    boxBody.setBackground(pathItemBackgrouond);
-                    listMenu.setBackground(pathItemBackgrouond);
-                    btnCancel.setBackground(pathItemBackgrouond);
-                }
-                boxRoot.setLayoutConfig(new ComponentContainer.LayoutConfig(ComponentContainer.LayoutConfig.MATCH_PARENT, ComponentContainer.LayoutConfig.MATCH_CONTENT));
+                styleKongzue();
                 break;
             default:
                 boxRoot.setLayoutConfig(new ComponentContainer.LayoutConfig(ComponentContainer.LayoutConfig.MATCH_PARENT, ComponentContainer.LayoutConfig.MATCH_CONTENT));
                 break;
         }
+    }
+
+    private void lightBoxCustomView(){
+        if (!isNull(title)) {
+            ShapeElement pathItemBackgrouond = new ShapeElement();
+            pathItemBackgrouond.setShape(ShapeElement.RECTANGLE);
+            if (DialogSettings.style == DialogSettings.STYLE.STYLE_KONGZUE || DialogSettings.style == DialogSettings.STYLE.STYLE_MIUI) {
+                pathItemBackgrouond.setRgbColor(new RgbColor(255, 255, 255));
+            } else {
+                pathItemBackgrouond.setRgbColor(new RgbColor(244, 245, 246));
+            }
+            pathItemBackgrouond.setCornerRadiiArray(new float[]{0, 0, 0, 0, 0, 0, 0, 0});
+            boxCustom.setBackground(pathItemBackgrouond);
+        } else {
+            ShapeElement pathItemBackgrouond = new ShapeElement();
+            pathItemBackgrouond.setShape(ShapeElement.RECTANGLE);
+            if (DialogSettings.style == DialogSettings.STYLE.STYLE_KONGZUE || DialogSettings.style == DialogSettings.STYLE.STYLE_MIUI) {
+                pathItemBackgrouond.setRgbColor(new RgbColor(255, 255, 255));
+            } else {
+                pathItemBackgrouond.setRgbColor(new RgbColor(244, 245, 246));
+            }
+            pathItemBackgrouond.setCornerRadiiArray(new float[]{50, 50, 50, 50, 0, 0, 0, 0});
+            boxCustom.setBackground(pathItemBackgrouond);
+        }
+    }
+
+    private void darkBoxCustomView(){
+        if (!isNull(title)) {
+            ShapeElement pathItemBackgrouond = new ShapeElement();
+            pathItemBackgrouond.setShape(ShapeElement.RECTANGLE);
+            pathItemBackgrouond.setRgbColor(new RgbColor(38, 38, 38));
+            pathItemBackgrouond.setCornerRadiiArray(new float[]{0, 0, 0, 0, 0, 0, 0, 0});
+            boxCustom.setBackground(pathItemBackgrouond);
+        } else {
+            ShapeElement pathItemBackgrouond = new ShapeElement();
+            pathItemBackgrouond.setShape(ShapeElement.RECTANGLE);
+            pathItemBackgrouond.setRgbColor(new RgbColor(38, 38, 38));
+            pathItemBackgrouond.setCornerRadiiArray(new float[]{50, 50, 50, 50, 0, 0, 0, 0});
+            boxCustom.setBackground(pathItemBackgrouond);
+        }
+    }
+
+    private void setBoxCustomView(){
 
         if (customView != null) {
             boxCustom.removeAllComponents();
@@ -330,47 +386,16 @@ public class BottomMenu extends DialogBase {
             if (titleSplitLine != null) titleSplitLine.setVisibility(Component.VISIBLE);
             //  final int bkgResId;
             if (theme == DialogSettings.THEME.LIGHT) {
-                if (!isNull(title)) {
-                    ShapeElement pathItemBackgrouond = new ShapeElement();
-                    pathItemBackgrouond.setShape(ShapeElement.RECTANGLE);
-                    if (DialogSettings.style == DialogSettings.STYLE.STYLE_KONGZUE || DialogSettings.style == DialogSettings.STYLE.STYLE_MIUI) {
-                        pathItemBackgrouond.setRgbColor(new RgbColor(255, 255, 255));
-                    } else {
-                        pathItemBackgrouond.setRgbColor(new RgbColor(244, 245, 246));
-                    }
-                    pathItemBackgrouond.setCornerRadiiArray(new float[]{0, 0, 0, 0, 0, 0, 0, 0});
-                    boxCustom.setBackground(pathItemBackgrouond);
-                } else {
-                    ShapeElement pathItemBackgrouond = new ShapeElement();
-                    pathItemBackgrouond.setShape(ShapeElement.RECTANGLE);
-                    if (DialogSettings.style == DialogSettings.STYLE.STYLE_KONGZUE || DialogSettings.style == DialogSettings.STYLE.STYLE_MIUI) {
-                        pathItemBackgrouond.setRgbColor(new RgbColor(255, 255, 255));
-                    } else {
-                        pathItemBackgrouond.setRgbColor(new RgbColor(244, 245, 246));
-                    }
-                    pathItemBackgrouond.setCornerRadiiArray(new float[]{50, 50, 50, 50, 0, 0, 0, 0});
-                    boxCustom.setBackground(pathItemBackgrouond);
-                }
+                lightBoxCustomView();
             } else {
-                if (!isNull(title)) {
-                    ShapeElement pathItemBackgrouond = new ShapeElement();
-                    pathItemBackgrouond.setShape(ShapeElement.RECTANGLE);
-                    pathItemBackgrouond.setRgbColor(new RgbColor(38, 38, 38));
-                    pathItemBackgrouond.setCornerRadiiArray(new float[]{0, 0, 0, 0, 0, 0, 0, 0});
-                    boxCustom.setBackground(pathItemBackgrouond);
-                } else {
-                    ShapeElement pathItemBackgrouond = new ShapeElement();
-                    pathItemBackgrouond.setShape(ShapeElement.RECTANGLE);
-                    pathItemBackgrouond.setRgbColor(new RgbColor(38, 38, 38));
-                    pathItemBackgrouond.setCornerRadiiArray(new float[]{50, 50, 50, 50, 0, 0, 0, 0});
-                    boxCustom.setBackground(pathItemBackgrouond);
-                }
+                darkBoxCustomView();
             }
-
         } else {
             boxCustom.setVisibility(Component.HIDE);
         }
+    }
 
+    private void setTitleView(){
         if (!isNull(title)) {
             txtTitle.setText(title.toString());
             txtTitle.setVisibility(Component.VISIBLE);
@@ -395,7 +420,14 @@ public class BottomMenu extends DialogBase {
 
             if (titleSplitLine != null) titleSplitLine.setVisibility(Component.VISIBLE);
         }
+    }
 
+    @Override
+    public void refreshView() {
+        textNullCheck();
+        styleSwitch();
+        setBoxCustomView();
+        setTitleView();
 
         if (rootView != null) {
             btnCancel.setText(cancelButtonText.toString());
@@ -481,7 +513,7 @@ public class BottomMenu extends DialogBase {
         return onDismissListener == null ? new OnDismissListener() {
             @Override
             public void onDismiss() {
-
+                //TODO
             }
         } : onDismissListener;
     }

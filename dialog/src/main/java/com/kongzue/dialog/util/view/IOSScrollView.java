@@ -16,7 +16,7 @@ import ohos.multimodalinput.event.TouchEvent;
  */
 public class IOSScrollView extends ScrollView implements Component.TouchEventListener{
     
-    private static final int size = 2;
+    private static final int SIZE = 2;
     private Component inner;
     private float x;
     private Rect normal = new Rect();;
@@ -48,8 +48,8 @@ public class IOSScrollView extends ScrollView implements Component.TouchEventLis
             return false;
         } else {
             commOnTouchEvent(touchEvent);
+            return true;
         }
-        return false;
     }
 
     public void commOnTouchEvent(TouchEvent ev) {
@@ -66,7 +66,7 @@ public class IOSScrollView extends ScrollView implements Component.TouchEventLis
             case TouchEvent.POINT_MOVE:
                 final float preX = x;
                 float nowX = ev.getPointerPosition(0).getX();
-                int deltaX = (int) (preX - nowX) / size;
+                int deltaX = (int) (preX - nowX) / SIZE;
                 
                 x = nowX;
                 if (isNeedMove()) {
