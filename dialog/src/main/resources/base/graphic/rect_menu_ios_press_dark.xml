@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--这个是给取消按钮用的，-->
+<shape
+    xmlns:ohos="http://schemas.huawei.com/res/ohos"
+    ohos:shape="rectangle">
+
+    <solid ohos:color="$color:whiteAlpha10"></solid>
+
+    <corners ohos:radius="11vp"/>
+</shape>

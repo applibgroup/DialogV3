@@ -1,0 +1,52 @@
+{
+  "app": {
+    "bundleName": "com.kongzue.dialogdemo",
+    "vendor": "kongzue",
+    "version": {
+      "code": 1000000,
+      "name": "1.0.0"
+    }
+  },
+  "deviceConfig": {},
+  "module": {
+    "package": "com.kongzue.dialogdemo",
+    "name": ".MyApplication",
+    "deviceType": [
+      "phone",
+      "tablet"
+    ],
+    "reqPermissions": [
+      {
+        "name": "ohos.permission.SYSTEM_FLOAT_WINDOW"
+      }
+    ],
+    "distro": {
+      "deliveryWithInstall": true,
+      "moduleName": "entry",
+      "moduleType": "entry",
+      "installationFree": true
+    },
+    "abilities": [
+      {
+        "skills": [
+          {
+            "entities": [
+              "entity.system.home"
+            ],
+            "actions": [
+              "action.system.home"
+            ]
+          }
+        ],
+        "orientation": "unspecified",
+        "name": "com.kongzue.dialogdemo.MainAbility",
+        "icon": "$media:icon",
+        "description": "$string:mainability_description",
+        "label": "$string:app_name",
+        "type": "page",
+        "launchType": "standard",
+        "visible": true
+      }
+    ]
+  }
+}

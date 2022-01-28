@@ -1,0 +1,28 @@
+{
+  "string": [
+    {
+      "name": "app_name",
+      "value": "DialogV3"
+    },
+    {
+      "name": "mainability_description",
+      "value": "Feature Ability"
+    },
+    {
+      "name": "HelloWorld",
+      "value": "Hello World"
+    },
+    {
+      "name": "t_agree",
+      "value": "ok"
+    },
+    {
+      "name": "replying",
+      "value": "replying"
+    },
+    {
+      "name": "ignore",
+      "value": "ignore"
+    }
+  ]
+}

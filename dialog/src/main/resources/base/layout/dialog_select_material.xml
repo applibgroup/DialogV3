@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<DependentLayout
+    xmlns:ohos="http://schemas.huawei.com/res/ohos"
+    ohos:id="$+id:box_root"
+    ohos:height="match_parent"
+    ohos:width="match_parent"
+    ohos:orientation="vertical">
+
+    <DependentLayout
+        ohos:id="$+id:bkg"
+        ohos:height="match_content"
+        ohos:width="match_parent">
+
+        <DirectionalLayout
+            ohos:height="match_content"
+            ohos:width="match_parent"
+            ohos:orientation="vertical">
+
+            <Text
+                ohos:text_alignment="left"
+                ohos:id="$+id:txt_dialog_title"
+                ohos:layout_alignment="left"
+                ohos:height="match_content"
+                ohos:top_margin="15vp"
+                ohos:width="match_content"
+                ohos:text="SubTitle"
+                ohos:text_color="$color:black"
+                ohos:text_size="18vp"
+                ohos:left_margin="20vp"/>
+
+            <Text
+                ohos:text_alignment="left"
+                ohos:id="$+id:txt_dialog_tip"
+                ohos:layout_alignment="left"
+                ohos:height="match_content"
+                ohos:left_margin="20vp"
+                ohos:right_margin="15vp"
+                ohos:top_margin="10vp"
+                ohos:width="match_parent"
+                ohos:text="Test Text"
+                ohos:text_color="$color:black"
+                ohos:text_size="17vp"
+                ohos:multiple_lines="true"/>
+
+            <DependentLayout
+                ohos:id="$+id:box_custom"
+                ohos:height="match_content"
+                ohos:width="match_parent"
+                ohos:top_margin="10vp"
+                ohos:visibility="hide"></DependentLayout>
+
+            <com.kongzue.dialog.util.view.MaxHeightLayout
+                ohos:id="$+id:box_input"
+                ohos:height="match_content"
+                ohos:width="match_parent">
+
+                <TextField
+                    ohos:text_alignment="vertical_center"
+                    ohos:id="$+id:txt_input"
+                    ohos:layout_alignment="horizontal_center"
+                    ohos:height="match_content"
+                    ohos:left_margin="15vp"
+                    ohos:right_margin="15vp"
+                    ohos:top_margin="10vp"
+                    ohos:width="match_parent"
+                    ohos:scrollable="false"
+                    ohos:bottom_padding="5vp"
+                    ohos:left_padding="5vp"
+                    ohos:right_padding="5vp"
+                    ohos:top_padding="5vp"
+                    ohos:scrollbar_thickness="7vp"
+                    ohos:text="Enter Text"
+                    ohos:hint="Enter text"
+                    ohos:text_color="#000000"
+                    ohos:text_size="14vp"
+                    ohos:visibility="hide"/>
+
+            </com.kongzue.dialog.util.view.MaxHeightLayout>
+
+
+
+            <DirectionalLayout
+                ohos:id="$+id:box_button"
+                ohos:height="match_content"
+                ohos:width="match_parent"
+                ohos:top_margin="40vp"
+                ohos:orientation="horizontal">
+
+
+                <Text
+                    ohos:clickable="true"
+                    ohos:align_parent_left="true"
+                    ohos:id="$+id:btn_selectNegative"
+                    ohos:height="50vp"
+                    ohos:width="match_content"
+                    ohos:text="cancel"
+                    ohos:text_color="#009900"
+                    ohos:text_size="14vp"
+                    ohos:end_margin="15vp"
+                    ohos:left_margin="20vp"/>
+
+                <Text
+                    ohos:clickable="true"
+                    ohos:id="$+id:btn_selectOther"
+                    ohos:height="50vp"
+                    ohos:width="match_content"
+                    ohos:text="other"
+                    ohos:text_color="#009900"
+                    ohos:left_of="$id:btn_selectPositive"
+                    ohos:text_size="14vp"
+                    ohos:visibility="hide"
+                    ohos:left_margin="150vp"/>
+
+                <Text
+                    ohos:clickable="true"
+                    ohos:align_parent_right="true"
+                    ohos:id="$+id:btn_selectPositive"
+                    ohos:height="50vp"
+                    ohos:width="match_content"
+                    ohos:text="ok"
+                    ohos:text_color="#009900"
+                    ohos:text_size="14vp"
+                    ohos:left_margin="30vp"
+                    ohos:text_alignment="right"/>
+            </DirectionalLayout>
+
+        </DirectionalLayout>
+
+    </DependentLayout>
+
+</DependentLayout>

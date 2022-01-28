@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<DependentLayout xmlns:ohos="http://schemas.huawei.com/res/ohos"
+    ohos:orientation="vertical"
+    ohos:width="match_parent"
+    ohos:height="50vp">
+
+    <Text
+        ohos:background_element="$graphic:button_selectdialog_kongzhue_white"
+        ohos:clickable="true"
+        ohos:id="$+id:text"
+        ohos:width="match_parent"
+        ohos:height="53vp"
+        ohos:text_alignment="center"
+        ohos:left_padding="15vp"
+        ohos:right_padding="15vp"
+        ohos:text=""
+        ohos:text_color="#007aff"
+        ohos:text_size="19vp" />
+    <Image
+        ohos:id="$+id:title_split_line"
+        ohos:width="match_parent"
+        ohos:height="1px"
+        ohos:background_element="#2c000000" />
+
+</DependentLayout>

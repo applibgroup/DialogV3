@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<Text
+    xmlns:ohos="http://schemas.huawei.com/res/ohos"
+    ohos:id="$+id:text"
+    ohos:height="match_content"
+    ohos:width="match_parent"
+    ohos:text_alignment="center"
+    ohos:bottom_padding="14vp"
+    ohos:left_padding="15vp"
+    ohos:right_padding="15vp"
+    ohos:top_padding="14vp"
+    ohos:text=""
+    ohos:text_color="#353535"
+    ohos:text_size="16vp"/>

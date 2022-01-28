@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<DependentLayout
+    xmlns:ohos="http://schemas.huawei.com/res/ohos"
+    ohos:height="match_parent"
+    ohos:width="match_parent"
+    ohos:orientation="vertical"
+    ohos:id="$+id:tip_box">
+
+    <DependentLayout
+        ohos:id="$+id:box_body"
+        ohos:center_in_parent="true"
+        ohos:height="match_content"
+        ohos:width="match_content"
+        ohos:min_height="125vp"
+        ohos:min_width="125vp">
+
+        <DependentLayout
+            ohos:id="$+id:box_blur"
+            ohos:height="125vp"
+            ohos:width="125vp"></DependentLayout>
+
+        <DirectionalLayout
+            ohos:alignment="horizontal_center"
+            ohos:center_in_parent="true"
+            ohos:height="match_content"
+            ohos:width="match_content"
+            ohos:orientation="vertical">
+
+            <DependentLayout
+                ohos:id="$+id:box_progress"
+                ohos:height="65vp"
+                ohos:width="65vp">
+
+                <com.kongzue.dialog.util.ProgressView
+                    ohos:id="$+id:circularprogressbar"
+                    ohos:height="100vp"
+                    ohos:width="60vp"
+                   />
+
+            </DependentLayout>
+
+            <DependentLayout
+                ohos:id="$+id:box_tip"
+                ohos:height="65vp"
+                ohos:width="65vp"
+                ohos:visibility="hide"/>
+
+            <Text
+                ohos:layout_alignment="horizontal_center"
+                ohos:id="$+id:txt_info"
+                ohos:height="match_content"
+                ohos:left_margin="15vp"
+                ohos:right_margin="15vp"
+                ohos:top_margin="12vp"
+                ohos:width="match_content"
+                ohos:max_text_lines="3"
+                ohos:text="Tip"
+                ohos:text_color="$color:black"
+                ohos:text_size="14vp" />
+
+        </DirectionalLayout>
+
+    </DependentLayout>
+
+</DependentLayout>

@@ -1,0 +1,383 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:ohos="http://schemas.huawei.com/res/ohos"
+    ohos:height="match_parent"
+    ohos:width="match_parent">
+
+    <DirectionalLayout
+        ohos:height="match_content"
+        ohos:width="match_parent"
+        ohos:orientation="vertical">
+
+        <Text
+            ohos:id="$+id:selectstyle"
+            ohos:height="match_content"
+            ohos:width="match_parent"
+            ohos:margin="30"
+            ohos:text="Select style"
+            ohos:text_size="16vp"/>
+
+        <DirectionalLayout
+            ohos:height="match_content"
+            ohos:width="match_content"
+            ohos:orientation="horizontal">
+
+            <RadioContainer
+                ohos:id="$+id:rgGroup"
+                ohos:height="match_content"
+                ohos:width="match_content"
+                ohos:orientation="horizontal"
+                ohos:start_margin="5vp">
+
+                <RadioButton
+                    ohos:id="$+id:ios"
+                    ohos:height="match_content"
+                    ohos:width="match_content"
+                    ohos:text="ios"
+                    ohos:text_alignment="center"
+                    ohos:text_color="#000000"
+                    ohos:text_size="16fp"/>
+
+                <RadioButton
+                    ohos:id="$+id:material"
+                    ohos:height="match_content"
+                    ohos:width="match_content"
+                    ohos:text="Material"
+                    ohos:text_alignment="center"
+                    ohos:text_color="#000000"
+                    ohos:text_size="16fp"/>
+
+                <RadioButton
+                    ohos:id="$+id:kongzue"
+                    ohos:height="match_content"
+                    ohos:width="match_content"
+                    ohos:text="Kongzue"
+                    ohos:text_alignment="center"
+                    ohos:text_color="#000000"
+                    ohos:text_size="16fp"/>
+
+                <RadioButton
+                    ohos:id="$+id:miui"
+                    ohos:height="match_content"
+                    ohos:width="match_content"
+                    ohos:text="MIUI"
+                    ohos:text_alignment="center"
+                    ohos:text_color="#000000"
+                    ohos:text_size="16fp"/>
+            </RadioContainer>
+        </DirectionalLayout>
+
+        <Text
+            ohos:id="$+id:selecttheme"
+            ohos:height="match_content"
+            ohos:width="match_parent"
+            ohos:margin="30"
+            ohos:text="Select Theme"
+            ohos:text_size="16vp"/>
+
+        <DirectionalLayout
+            ohos:height="match_content"
+            ohos:width="match_content"
+            ohos:orientation="horizontal">
+
+            <RadioContainer
+                ohos:id="$+id:rgtheme"
+                ohos:height="match_content"
+                ohos:width="match_content"
+                ohos:orientation="horizontal"
+                ohos:start_margin="5vp">
+
+                <RadioButton
+                    ohos:id="$+id:light"
+                    ohos:height="match_content"
+                    ohos:width="match_content"
+                    ohos:text="Light"
+                    ohos:text_alignment="center"
+                    ohos:text_color="#000000"
+                    ohos:text_size="16fp"/>
+
+                <RadioButton
+                    ohos:id="$+id:dark"
+                    ohos:height="match_content"
+                    ohos:width="match_content"
+                    ohos:text="Dark"
+                    ohos:text_alignment="center"
+                    ohos:text_color="#000000"
+                    ohos:text_size="16fp"/>
+
+            </RadioContainer>
+        </DirectionalLayout>
+
+        <Text
+            ohos:id="$+id:dialogbox"
+            ohos:height="match_content"
+            ohos:width="match_parent"
+            ohos:margin="30"
+            ohos:text="Dialog Box"
+            ohos:text_size="16vp"/>
+
+        <DirectionalLayout
+            ohos:height="match_content"
+            ohos:width="match_parent"
+            ohos:orientation="horizontal">
+
+            <Button
+                ohos:id="$+id:messagedialog"
+                ohos:height="120"
+                ohos:width="100vp"
+                ohos:background_element="$graphic:background_gray_shape_button"
+                ohos:margin="30"
+                ohos:text="Message"
+                ohos:text_color="#FFFFFF"
+                ohos:text_size="16fp"/>
+
+            <Button
+                ohos:id="$+id:selectiondialog"
+                ohos:height="120"
+                ohos:width="100vp"
+                ohos:background_element="$graphic:background_gray_shape_button"
+                ohos:margin="30"
+                ohos:text="Selection"
+                ohos:text_color="#FFFFFF"
+                ohos:text_size="16fp"/>
+
+            <Button
+                ohos:id="$+id:input"
+                ohos:height="120"
+                ohos:width="100vp"
+                ohos:background_element="$graphic:background_gray_shape_button"
+                ohos:margin="30"
+                ohos:text="Input"
+                ohos:text_color="#FFFFFF"
+                ohos:text_size="16fp"/>
+
+        </DirectionalLayout>
+
+        <Text
+            ohos:id="$+id:tips"
+            ohos:height="match_content"
+            ohos:width="match_parent"
+            ohos:margin="30"
+            ohos:text="Tips"
+            ohos:text_size="16vp"/>
+
+        <DirectionalLayout
+            ohos:height="match_content"
+            ohos:width="match_parent"
+            ohos:orientation="horizontal">
+
+            <Button
+                ohos:id="$+id:waitdialog"
+                ohos:height="120"
+                ohos:width="450"
+                ohos:background_element="$graphic:background_gray_shape_button"
+                ohos:margin="30"
+                ohos:text="Wait DialogBox"
+                ohos:text_color="#FFFFFF"
+                ohos:text_size="16fp"/>
+
+            <Button
+                ohos:id="$+id:waitpromptdialog"
+                ohos:height="120"
+                ohos:width="600"
+                ohos:background_element="$graphic:background_gray_shape_button"
+                ohos:margin="30"
+                ohos:text="Wait + Prompt DialogBox"
+                ohos:text_color="#FFFFFF"
+                ohos:text_size="16fp"/>
+
+        </DirectionalLayout>
+
+        <Text
+            ohos:id="$+id:demonstartionofotherfunctions"
+            ohos:height="match_content"
+            ohos:width="match_parent"
+            ohos:margin="30"
+            ohos:text="Demonstartion of other functions"
+            ohos:text_size="16vp"/>
+
+        <DirectionalLayout
+            ohos:height="match_content"
+            ohos:width="match_parent"
+            ohos:orientation="horizontal">
+
+            <Button
+                ohos:id="$+id:serialization"
+                ohos:height="120"
+                ohos:width="700"
+                ohos:background_element="$graphic:background_gray_shape_button"
+                ohos:margin="30"
+                ohos:text="Serialization of dialogs"
+                ohos:text_color="#FFFFFF"
+                ohos:text_size="16fp"/>
+
+            <Button
+                ohos:id="$+id:closeability"
+                ohos:height="120"
+                ohos:width="300"
+                ohos:background_element="$graphic:background_gray_shape_button"
+                ohos:margin="30"
+                ohos:text="Close Ability"
+                ohos:text_color="#FFFFFF"
+                ohos:text_size="16fp"/>
+        </DirectionalLayout>
+
+        <Text
+            ohos:id="$+id:notification"
+            ohos:height="match_content"
+            ohos:width="match_parent"
+            ohos:margin="30"
+            ohos:text="Cross-domain notification"
+            ohos:text_size="16vp"/>
+
+        <DirectionalLayout
+            ohos:height="match_content"
+            ohos:width="match_parent"
+            ohos:orientation="horizontal">
+
+            <Button
+                ohos:id="$+id:btn_notify"
+                ohos:height="120"
+                ohos:width="800"
+                ohos:background_element="$graphic:background_gray_shape_button"
+                ohos:margin="30"
+                ohos:text="Show cross domain notifications"
+                ohos:text_color="#FFFFFF"
+                ohos:text_size="16fp"/>
+        </DirectionalLayout>
+
+        <Text
+            ohos:id="$+id:bottommenu"
+            ohos:height="match_content"
+            ohos:width="match_parent"
+            ohos:margin="30"
+            ohos:text="Bottom Menu"
+            ohos:text_size="16vp"/>
+
+        <DirectionalLayout
+            ohos:height="match_content"
+            ohos:width="match_parent"
+            ohos:orientation="horizontal">
+
+            <Button
+                ohos:id="$+id:btn_showBottomMenu"
+                ohos:height="120"
+                ohos:width="match_content"
+                ohos:background_element="$graphic:background_gray_shape_button"
+                ohos:margin="30"
+                ohos:text="Bottom Menu"
+                ohos:multiple_lines="true"
+                ohos:text_color="#FFFFFF"
+                ohos:text_size="14fp"/>
+            <Button
+                ohos:id="$+id:btn_showBottomMenuWithHeader"
+                ohos:height="120"
+                ohos:width="match_content"
+                ohos:background_element="$graphic:background_gray_shape_button"
+                ohos:margin="30"
+                ohos:text="Bottom Menu + Header"
+                ohos:multiple_lines="true"
+                ohos:text_color="#FFFFFF"
+                ohos:text_size="14fp"/>
+
+            <Button
+                ohos:id="$+id:btn_shareDialog"
+                ohos:height="120"
+                ohos:width="match_content"
+                ohos:background_element="$graphic:background_gray_shape_button"
+                ohos:margin="30"
+                ohos:text="Share DialogBox"
+                ohos:multiple_lines="true"
+                ohos:text_color="#FFFFFF"
+                ohos:text_size="14fp"/>
+
+        </DirectionalLayout>
+
+        <Text
+            ohos:id="$+id:content"
+            ohos:height="match_content"
+            ohos:width="match_parent"
+            ohos:margin="30"
+            ohos:text="Customizing content layouts"
+            ohos:text_size="16vp"/>
+
+        <DirectionalLayout
+            ohos:height="match_content"
+            ohos:width="match_parent"
+            ohos:orientation="horizontal">
+
+            <Button
+                ohos:id="$+id:dialogboxcustomize"
+                ohos:height="match_content"
+                ohos:width="match_content"
+                ohos:background_element="$graphic:background_gray_shape_button"
+                ohos:left_margin="10vp"
+                ohos:padding="30"
+                ohos:text="DialogBox"
+                ohos:multiple_lines="true"
+                ohos:text_color="#FFFFFF"
+                ohos:text_size="14fp"/>
+
+            <Button
+                ohos:id="$+id:inputboxcustomize"
+                ohos:height="match_content"
+                ohos:width="match_content"
+                ohos:background_element="$graphic:background_gray_shape_button"
+                ohos:left_margin="10vp"
+                ohos:padding="30"
+                ohos:text="InputBox"
+                ohos:multiple_lines="true"
+                ohos:text_color="#FFFFFF"
+                ohos:text_size="14fp"/>
+
+            <Button
+                ohos:id="$+id:btn_customizeBottomMenu"
+                ohos:height="120"
+                ohos:width="match_content"
+                ohos:background_element="$graphic:background_gray_shape_button"
+                ohos:margin="30"
+                ohos:text="Bottom Menu"
+                ohos:multiple_lines="true"
+                ohos:text_color="#FFFFFF"
+                ohos:text_size="14fp"/>
+
+            <Button
+                ohos:id="$+id:btn_customNotification"
+                ohos:height="match_content"
+                ohos:width="match_content"
+                ohos:background_element="$graphic:background_gray_shape_button"
+                ohos:left_margin="10vp"
+                ohos:padding="30"
+                ohos:text="Notice"
+                ohos:multiple_lines="true"
+                ohos:text_color="#FFFFFF"
+                ohos:text_size="14fp"/>
+        </DirectionalLayout>
+
+        <Text
+          ohos:width="match_content"
+          ohos:height="match_content"
+          ohos:margin="30"
+          ohos:text="Fully custom dialog box"
+          ohos:text_color="#dc000000"
+          ohos:text_size="16vp"
+          ohos:text_weight="700"/>
+
+        <DirectionalLayout
+            ohos:height="match_content"
+            ohos:width="match_parent"
+            ohos:orientation="horizontal">
+
+            <Button
+                ohos:id="$+id:btn_customDialog"
+                ohos:height="120"
+                ohos:width="match_content"
+                ohos:background_element="$graphic:background_gray_shape_button"
+                ohos:margin="30"
+                ohos:text="Fully custom dialog box"
+                ohos:multiple_lines="true"
+                ohos:text_color="#FFFFFF"
+                ohos:text_size="14fp"/>
+        </DirectionalLayout>
+    </DirectionalLayout>
+</ScrollView>

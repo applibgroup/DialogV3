@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<DependentLayout
+    xmlns:ohos="http://schemas.huawei.com/res/ohos"
+    ohos:id="$+id:box_root"
+    ohos:height="match_parent"
+    ohos:width="match_parent"
+    ohos:orientation="vertical">
+
+    <DependentLayout
+        ohos:id="$+id:bkg"
+        ohos:height="match_content"
+        ohos:width="match_parent">
+
+        <DirectionalLayout
+            ohos:height="match_content"
+            ohos:width="match_parent"
+            ohos:orientation="vertical">
+
+            <Text
+                ohos:text_alignment="center"
+                ohos:id="$+id:txt_dialog_title"
+                ohos:layout_alignment="horizontal_center"
+                ohos:height="match_content"
+                ohos:top_margin="20vp"
+                ohos:width="match_content"
+                ohos:text="SubTitle"
+                ohos:text_color="$color:black"
+                ohos:text_size="17vp"
+                ohos:text_font="BOLD"/>
+            <ScrollView
+                ohos:height="match_content"
+                ohos:width="match_parent"
+                ohos:id="$+id:scroller">
+            <Text
+                ohos:text_alignment="center"
+                ohos:id="$+id:txt_dialog_tip"
+                ohos:layout_alignment="horizontal_center"
+                ohos:height="match_content"
+                ohos:bottom_margin="10vp"
+                ohos:left_margin="15vp"
+                ohos:right_margin="15vp"
+                ohos:top_margin="5vp"
+                ohos:width="match_parent"
+                ohos:text="conetent"
+                ohos:text_color="$color:black"
+                ohos:text_size="13vp"
+                ohos:scrollable="true"
+                ohos:multiple_lines="true"/>
+            </ScrollView>
+
+            <DependentLayout
+                ohos:id="$+id:box_custom"
+                ohos:height="match_content"
+                ohos:width="match_parent"
+                ohos:visibility="hide"></DependentLayout>
+
+            <com.kongzue.dialog.util.view.MaxHeightLayout
+                ohos:id="$+id:box_input"
+                ohos:height="match_content"
+                ohos:width="match_parent">
+
+                <TextField
+                    ohos:background_element="$graphic:editbox_dialog_bkg_ios"
+                    ohos:text_alignment="vertical_center"
+                    ohos:id="$+id:txt_input"
+                    ohos:layout_alignment="horizontal_center"
+                    ohos:height="match_content"
+                    ohos:left_margin="15vp"
+                    ohos:right_margin="15vp"
+                    ohos:top_margin="10vp"
+                    ohos:width="match_parent"
+                    ohos:scrollable="false"
+                    ohos:bottom_padding="5vp"
+                    ohos:left_padding="5vp"
+                    ohos:right_padding="5vp"
+                    ohos:top_padding="5vp"
+                    ohos:scrollbar_thickness="7vp"
+                    ohos:text="Enter Text"
+                    ohos:text_color="#000000"
+                    ohos:text_size="14vp"
+                    ohos:hint="Enter Text"
+                    ohos:visibility="hide"/>
+
+            </com.kongzue.dialog.util.view.MaxHeightLayout>
+
+            <Image
+                ohos:background_element="#2c000000"
+                ohos:id="$+id:split_horizontal"
+                ohos:height="0.4vp"
+                ohos:top_margin="10vp"
+                ohos:width="match_parent"/>
+
+            <DirectionalLayout
+                ohos:id="$+id:box_button"
+                ohos:layout_alignment="horizontal_center"
+                ohos:height="match_content"
+                ohos:width="match_parent"
+                ohos:orientation="horizontal">
+
+                <Text
+                    ohos:clickable="true"
+                    ohos:text_alignment="center"
+                    ohos:id="$+id:btn_selectNegative"
+                    ohos:height="50vp"
+                    ohos:weight="1"
+                    ohos:width="match_parent"
+                    ohos:text="cancel"
+                    ohos:text_color="#007aff"
+                    ohos:text_size="17vp"/>
+
+                <Image
+                    ohos:background_element="#2c000000"
+                    ohos:id="$+id:split_vertical1"
+                    ohos:height="match_parent"
+                    ohos:width="1vp"
+                    ohos:visibility="hide"/>
+
+                <Text
+                    ohos:clickable="true"
+                    ohos:text_alignment="center"
+                    ohos:id="$+id:btn_selectOther"
+                    ohos:height="50vp"
+                    ohos:weight="1"
+                    ohos:width="match_parent"
+                    ohos:text="other"
+                    ohos:text_color="#007aff"
+                    ohos:text_size="17vp"
+                    ohos:visibility="hide"/>
+
+                <Image
+                    ohos:background_element="#2c000000"
+                    ohos:id="$+id:split_vertical2"
+                    ohos:width="1vp"
+                    ohos:height="match_parent"/>
+
+                <Text
+                    ohos:clickable="true"
+                    ohos:text_alignment="center"
+                    ohos:id="$+id:btn_selectPositive"
+                    ohos:height="50vp"
+                    ohos:weight="1"
+                    ohos:width="match_parent"
+                    ohos:text="ok"
+                    ohos:text_color="#007aff"
+                    ohos:text_size="17vp"/>
+            </DirectionalLayout>
+
+        </DirectionalLayout>
+
+    </DependentLayout>
+
+</DependentLayout>

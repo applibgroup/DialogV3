@@ -1,0 +1,36 @@
+{
+  "app": {
+    "bundleName": "com.kongzue.dialogdemo",
+    "vendor": "kongzue",
+    "version": {
+      "code": 1000000,
+      "name": "1.0.0"
+    }
+  },
+  "deviceConfig": {},
+  "module": {
+    "package": "com.kongzue.dialogdemo",
+    "name": "testModule",
+    "deviceType": [
+      "phone"
+    ],
+    "distro": {
+      "deliveryWithInstall": true,
+      "moduleName": "entry_test",
+      "moduleType": "feature",
+      "installationFree": true
+    },
+    "abilities": [
+      {
+        "name": "decc.testkit.runner.EntryAbility",
+        "description": "Test Entry Ability",
+        "icon": "$media:icon",
+        "label": "$string:app_name",
+        "launchType": "standard",
+        "orientation": "landscape",
+        "visible": true,
+        "type": "page"
+      }
+    ]
+  }
+}
